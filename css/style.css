@@ -13,10 +13,10 @@ html, body {
   overflow: hidden;
 }
 
-.scene {
+.contant {
   position: relative;
   height: 100%;
-  background: #1d1f20;
+  background: #fff;
   padding: 20rem;
   text-align: center;
 }
@@ -26,33 +26,6 @@ h1 {
   font-size: 8rem;
   text-transform: uppercase;
   font-family: test;
-  color: #fff;
+  color: #202020;
   z-index: 10;
-}
-
-.magic {
-  z-index: 5;
-  position: absolute;
-  top: calc(50% - 10rem);
-  left: calc(50% - 10rem);
-  width: 20rem;
-  height: 20rem;
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/hover-reveal.jpg") 50% 50% no-repeat fixed;
-  background-size: cover;
-  border-radius: 50%;
-}
-
-.check-out {
-  z-index: 100;
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  font-size: 2rem;
-  color: #fff;
-  font-family: test;
-}
-.check-out a {
-  color: #ffaaaa;
 }
