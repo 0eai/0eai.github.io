@@ -4,14 +4,444 @@
 <head>
   <meta charset="UTF-8">
   <title>Anspire</title>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
       <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="body">
+  <nav id="cd-vertical-nav">
+  		<ul id="menu-list">
+  			<li>
+  				<a href="#home" data-number="1" id="li1">
+  					<span id="label-home" class="cd-label">HOME</span>
+  					<span id="dot-home" class="cd-dot"></span>
+  				</a>
+  			</li>
+  			<li>
+  				<a href="#about" data-number="2" id="li2">
+  					<span class="cd-label">ABOUT</span>
+  					<span class="cd-dot"></span>
+  				</a>
+  			</li>
+  			<li>
+  				<a href="#skills" data-number="3" id="li3">
+  					<span class="cd-label">SKILLS</span>
+  					<span class="cd-dot"></span>
+  				</a>
+  			</li>
+  			<li>
+  				<a href="#portfolio" data-number="4" id="li4">
+  					<span class="cd-label">PORTFOLIO</span>
+  					<span class="cd-dot"></span>
+  				</a>
+  			</li>
+  			<li>
+  				<a href="#certification" data-number="5" id="li5">
+  					<span class="cd-label">CERTIFICATION</span>
+  					<span class="cd-dot"></span>
+  				</a>
+  			</li>
+        <li>
+  				<a href="#education" data-number="6" id="li6">
+  					<span class="cd-label">EDUCATION</span>
+  					<span class="cd-dot"></span>
+  				</a>
+  			</li>
+        <!--<li>
+  				<a href="#references" data-number="7" id="li6">
+  					<span class="cd-label">REFERENCES</span>
+  					<span class="cd-dot"></span>
+  				</a>
+  			</li>-->
+  		</ul>
+  	</nav>
+
+  <div class="header" >
+      <div id="line">
+	        <div class="circle-right" id="rightHandle"></div>
+	        <div class="circle-left active show" id="leftHandle"></div>
+      </div>
+</div>
   <div class="contant">
-    <h1>Comming Soon!</h1>
-    <h1>Anspire</h1>
+<!-- ##############################################
+                    CONTECT CARD
+############################################## -->
+<div class="contant-wrap">
+<div id="home" class="contact_card">
+    <div class="card_Avatar"></div>
+  <div class="card">
+    <div id="name">Ankit Kumar Singh</div>
+    <a id="email" href="mailto:prashant81995@gmail.com" target="_blank">📧 iamanspire@gmail.com</a>
+    <a id="website" href="#" target="_blank">🌐 www.anspire.me</a>
+    <ul>
+      <a href="https://github.com/Anspire" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter" style="font-size:20px"></i></a>
+      <a href="https://www.facebook.com/ankitsingh111" target="_blank"><i class="fab fa-facebook-f" style="font-size:20px"></i></a>
+      <a href="https://www.linkedin.com/in/anspire/" target="_blank"><i class="fab fa-linkedin-in" style="font-size:20px"></i></a>
+      <a href="https://t.me/anspire" target="_blank"><i class="fab fa-telegram" style="font-size:20px"></i></a>
+      <a href="https://play.google.com/store/apps/developer?id=ANKIT+KUMAR+SINGH" target="_blank"><i class="fab fa-google-play" style="font-size:20px"></i></a>
+      <a id="resume" href="./assets/resume.pdf" target="_blank"><i class="fas fa-file-pdf style="font-size:20px""></i> Resume</a>
+    </ul>
   </div>
+</div>
+
+<!-- ##############################################
+                    ABOUT
+############################################## -->
+
+<div id="about" class="about_card">
+    <p class="about_desc">I'm a MCA student at Department of Computer Science(School of Engineering & Technology), Pondicherry University, Puducherry. My program is focused on application aspects of Computer Science which includes programming, data structures, computer architecture, algorithm design & analysis, operating systems, object oriented programming, software engineering. Along with these i studied here about web technology,cloud computing, networking and artificial intelligence. Personally i'm so much interested in Android development, algorithms & data structure, c++ & java programming. apart from above I like Cricket and music.</p>
+</div>
+
+<!-- ##############################################
+                SKILLS
+############################################## -->
+
+<div id="skills" class="slider">
+  <div class="slider__wrp swiper-wrapper">
+
+    <div class="slider__item swiper-slide">
+      <div class="slider__content skills-bar-container">
+
+        <div class="progressbar-title">
+          <h3>C & C++</h3>
+          <span class="percent" id="c-pourcent">80%</span>
+        </div>
+        <div class="bar-container">
+          <span class="progressbar progresscolor" id="progress-c"></span>
+        </div>
+
+        <div class="progressbar-title">
+          <h3>APP DEVELOPMENT (ANDROID, DESKTOP)</h3>
+          <span class="percent" id="app-pourcent">60%</span>
+        </div>
+        <div class="bar-container">
+          <span class="progressbar progresscolor" id="progress-app"></span>
+        </div>
+
+        <div class="progressbar-title">
+          <h3>JAVA</h3>
+          <span class="percent" id="java-pourcent">70%</span>
+        </div>
+        <div class="bar-container">
+          <span class="progressbar progresscolor" id="progress-java"></span>
+        </div>
+
+        <div class="progressbar-title">
+          <h3>BACKEND DEVELOPMENT(NODEJS)</h3>
+          <span class="percent" id="backend-pourcent">60%</span>
+        </div>
+        <div class="bar-container">
+          <span class="progressbar progresscolor" id="progress-backend"></span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="slider__item swiper-slide">
+      <div class="slider__content skills-bar-container">
+
+        <div class="progressbar-title">
+          <h3>VERSION CONTROL(GIT, GITHUB)</h3>
+          <span class="percent" id="git-pourcent">80%</span>
+        </div>
+        <div class="bar-container">
+          <span class="progressbar progresscolor" id="progress-git"></span>
+        </div>
+
+
+        <div class="progressbar-title">
+          <h3>JAVASCRIPT</h3>
+          <span class="percent" id="js-pourcent">80%</span>
+        </div>
+        <div class="bar-container">
+          <span class="progressbar progresscolor" id="progress-js"></span>
+        </div>
+
+
+        <div class="progressbar-title">
+          <h3>PYTHON</h3>
+          <span class="percent" id="py-pourcent">60%</span>
+        </div>
+        <div class="bar-container">
+          <span class="progressbar progresscolor" id="progress-py"></span>
+        </div>
+
+
+        <div class="progressbar-title">
+          <h3>NETWORKING</h3>
+          <span class="percent" id="net-pourcent">70%</span>
+        </div>
+        <div class="bar-container">
+          <span class="progressbar progresscolor" id="progress-net"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="slider__pagination"></div>
+</div>
+
+<!-- ##############################################
+                PORTFOLIO SLIDER
+############################################## -->
+
+  <div id="portfolio" class="slider">
+    <div class="slider__wrp swiper-wrapper">
+
+      <div class="slider__item swiper-slide">
+        <div class="slider__content">
+          <span class="slider__year">JAN 2018 - MAR 2019</span>
+          <div class="slider__title">Hash Include</div>
+          <div class="slider__short-note">Android app</div>
+          <div class="slider__text">This is official app for hashinclude club - Pondicherry University. This is an open source project.</div>
+          <ul>
+            <a href="https://github.com/Anspire/hashinclude" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+            <a href="https://play.google.com/store/apps/details?id=hash.include" target="_blank"><i class="fab fa-google-play" style="font-size:20px"></i></a>
+            <a href="http://anspire.me/hash/include" target="_blank"><i class="fas fa-globe-asia" style="font-size:20px"></i></a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slider__item swiper-slide">
+        <div class="slider__content">
+          <span class="slider__year">AUG 2018 - Ongoing</span>
+          <div class="slider__title">Gapashap</div>
+          <div class="slider__short-note">Electron (JavaScript)</div>
+          <div class="slider__text">Real time messaging maltiplatform desktop application.</div>
+          <ul>
+            <a href="https://github.com/Anspire/gapashap" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slider__item swiper-slide">
+        <div class="slider__content">
+          <span class="slider__year">APRIL 2018</span>
+          <div class="slider__title">Remote Control</div>
+          <div class="slider__short-note">Android | JavaScript(RobotJS)</div>
+          <div class="slider__text">Desktop Automation. Remotely control computer using android based smartphone.</div>
+          <ul>
+            <a href="https://github.com/Anspire/Remote-Control" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slider__item swiper-slide">
+        <div class="slider__content">
+          <span class="slider__year">SEPT 2018 - Ongoing</span>
+          <div class="slider__title">Anspire</div>
+          <div class="slider__short-note">JavaScript | html | css</div>
+          <div class="slider__text">Web Application.</div>
+          <ul>
+            <a href="https://github.com/Anspire/Anspire.github.io" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+            <a href="http://anspire.me" target="_blank"><i class="fas fa-globe-asia" style="font-size:20px"></i></a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slider__item swiper-slide">
+        <div class="slider__content">
+          <span class="slider__year">AUG 2018</span>
+          <div class="slider__title">encrypto</div>
+          <div class="slider__short-note">NodeJS</div>
+          <div class="slider__text">Command line application for encryption and decryption of files.</div>
+          <ul>
+            <a href="https://github.com/Anspire/encrypto" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slider__item swiper-slide">
+        <div class="slider__content">
+          <span class="slider__year">SEPT 2018</span>
+          <div class="slider__title">Presentation Control</div>
+          <div class="slider__short-note">Android | JavaScript(RobotJS)</div>
+          <div class="slider__text">Presentation Control using android based smartphone.</div>
+          <ul>
+            <a href="https://github.com/Anspire/presentation-control-android" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+            <a href="https://github.com/Anspire/presentation-control" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="slider__pagination"></div>
+  </div>
+  <!-- ##############################################
+                  CERTIFICATION SLIDER
+  ############################################## -->
+
+    <div id="certification" class="slider">
+      <div class="slider__wrp swiper-wrapper">
+
+        <div class="slider__item swiper-slide">
+          <div class="slider__content">
+            <div>
+              <span class="slider__year">JUL 2017 - SEP 2017</span>
+              <span class="slider__percent">  |  91% (Gold)</span>
+            </div>
+            <div class="slider__title">Programming in C++</div>
+            <div class="slider__college">@ NPTEL</div>
+            <div class="slider__text">Secured place in top 1% of successful candidates. (Gold category)</div>
+            <ul>
+              <a href="https://nptel.ac.in/noc/social_cert/noc17-cs24/NPTEL17CS24S1640245171062583.jpg" target="_blank"><i class="fas fa-certificate" style="font-size:20px"></i></a>
+            </ul>
+          </div>
+        </div>
+
+        <div class="slider__item swiper-slide">
+          <div class="slider__content">
+            <div>
+              <span class="slider__year">JUL 2017 - SEP 2017</span>
+              <span class="slider__percent">  |  84% (Elite)</span>
+            </div>
+            <div class="slider__title">Introduction to Programming in C</div>
+            <div class="slider__college">@ NPTEL</div>
+            <div class="slider__text">Secured place in top 5% of successful candidates.</div>
+            <ul>
+              <a href="https://nptel.ac.in/noc/social_cert/noc17-cs43/NPTEL17CS43S2620292171062583.jpg" target="_blank"><i class="fas fa-certificate" style="font-size:20px"></i></a>
+            </ul>
+          </div>
+        </div>
+
+        <div class="slider__item swiper-slide">
+          <div class="slider__content">
+            <div>
+              <span class="slider__year">FEB 2017 - MAR 2017</span>
+              <span class="slider__percent">  |  67% (Elite)</span>
+            </div>
+            <div class="slider__title">Information Security - IV</div>
+            <div class="slider__college">@ NPTEL</div>
+            <ul>
+              <a href="https://nptel.ac.in/noc/social_cert/noc18-cs24/NPTEL18CS24S37200811810073687.jpg" target="_blank"><i class="fas fa-certificate" style="font-size:20px"></i></a>
+            </ul>
+          </div>
+        </div>
+
+        <div class="slider__item swiper-slide">
+          <div class="slider__content">
+            <span class="slider__year">NOV 2017 - DEC 2017</span>
+            <div class="slider__title">The Online Marketing Fundamentals</div>
+            <div class="slider__college">@ Google Digital Garage</div>
+            <ul>
+              <a href="https://drive.google.com/file/d/1ljZx69I3un_NQPoBkL2HMN-5OC9g5gEW/view" target="_blank"><i class="fas fa-certificate" style="font-size:20px"></i></a>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="slider__pagination"></div>
+    </div>
+<!-- ##############################################
+                EDUCATION SLIDER
+############################################## -->
+
+  <div id="education" class="slider">
+    <div class="slider__wrp swiper-wrapper">
+
+      <div class="slider__item swiper-slide">
+        <div class="slider__content">
+          <span class="slider__year">2016 - 2019</span>
+          <div class="slider__title">Master's Degree</div>
+          <div class="slider__short-note">Master of Computer Application</div>
+          <div class="slider__college">@ PONDICHERRY UNIVERSITY</div>
+          <div class="slider__text">Currently pursuing my master’s from department Of computer science(School of Engineering and Technology) </div>
+        </div>
+      </div>
+
+      <div class="slider__item swiper-slide">
+        <div class="slider__content">
+          <span class="slider__year">2013 - 2016</span>
+          <div class="slider__title">Bachelor's Degree</div>
+          <div class="slider__short-note">Bachelor of Computer Application</div>
+          <div class="slider__college">@ MAGADH UNIVERSITY</div>
+          <div class="slider__text">Completed BCA in with (64%).</div>
+        </div>
+      </div>
+
+      <div class="slider__item swiper-slide">
+        <div class="slider__content">
+          <span class="slider__year">2011 - 2013</span>
+          <div class="slider__title">High School</div>
+          <div class="slider__short-note">Science and Mathematics</div>
+          <div class="slider__college">@ D L COLLEGE</div>
+          <div class="slider__text">Completed my secondary in Science Stream with (64%)[BSEB].</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="slider__pagination"></div>
+  </div>
+
+<!-- ##############################################
+                REFERENCES
+############################################## -->
+<!--
+<div id="references" class="slider">
+  <div class="slider__wrp swiper-wrapper">
+
+    <div class="slider__item swiper-slide">
+      <div class="slider__content">
+        <div class="slider__name">Prasant Kumar Rai</div>
+        <div class="slider__short-note">Student @ Pondicherry University</div>
+        <div class="slider__text">Ankit is in those people who always inspired me and will be. We worked together for some projects and the enthusiasm he has for learning new things and apply them thoroughly is amazing. He is a perfect blend of hard-work and dedication for work, he always find a perfect way to solve a problem. He is unstoppable, motivated and disciplined person. I used to learn a lot of things from him, I would like to recommend him.</div>
+        <ul>
+          <a href="https://github.com/Anspire" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter" style="font-size:20px"></i></a>
+          <a href="https://www.facebook.com/ankitsingh111" target="_blank"><i class="fab fa-facebook-f" style="font-size:20px"></i></a>
+          <a href="https://www.linkedin.com/in/anspire/" target="_blank"><i class="fab fa-linkedin-in" style="font-size:20px"></i></a>
+          <a href="https://t.me/anspire" target="_blank"><i class="fab fa-telegram" style="font-size:20px"></i></a>
+        </ul>
+      </div>
+    </div>
+
+    <div class="slider__item swiper-slide">
+      <div class="slider__content">
+        <div class="slider__name">Bachelor's Degree</div>
+        <div class="slider__short-note">Bachelor of Computer Application</div>
+        <div class="slider__text">Ankit is in those people who always inspired me and will be. We worked together for some projects and the enthusiasm he has for learning new things and apply them thoroughly is amazing. He is a perfect blend of hard-work and dedication for work, he always find a perfect way to solve a problem. He is unstoppable, motivated and disciplined person. I used to learn a lot of things from him, I would like to recommend him.</div>
+        <ul>
+          <a href="https://github.com/Anspire" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter" style="font-size:20px"></i></a>
+          <a href="https://www.facebook.com/ankitsingh111" target="_blank"><i class="fab fa-facebook-f" style="font-size:20px"></i></a>
+          <a href="https://www.linkedin.com/in/anspire/" target="_blank"><i class="fab fa-linkedin-in" style="font-size:20px"></i></a>
+          <a href="https://t.me/anspire" target="_blank"><i class="fab fa-telegram" style="font-size:20px"></i></a>
+        </ul>
+      </div>
+    </div>
+
+    <div class="slider__item swiper-slide">
+      <div class="slider__content">
+        <div class="slider__name">Dr. Ankit Singh</div>
+        <div class="slider__short-note">Assistant Professor @ Pondicherry university</div>
+        <div class="slider__text">Completed my secondary in Science Stream with (64%)[BSEB].</div>
+        <ul>
+          <a href="https://github.com/Anspire" target="_blank"><i class="fab fa-github" style="font-size:20px"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter" style="font-size:20px"></i></a>
+          <a href="https://www.facebook.com/ankitsingh111" target="_blank"><i class="fab fa-facebook-f" style="font-size:20px"></i></a>
+          <a href="https://www.linkedin.com/in/anspire/" target="_blank"><i class="fab fa-linkedin-in" style="font-size:20px"></i></a>
+          <a href="https://t.me/anspire" target="_blank"><i class="fab fa-telegram" style="font-size:20px"></i></a>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="slider__pagination"></div>
+</div>
+-->
+</div>
+</div>
+
+<!--<footer class="footer">
+  <p>© Ankit Kumar Singh. All rights reserved.</p>
+</footer>-->
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js'></script>
     <script  src="js/index.js"></script>
 </body>
 
