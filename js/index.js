@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded",function() {
   for (var i=0; i<lis.length; i++) {
     lis[i].addEventListener('click', functions[i].fun, false);
   }
-/*
+
   var x = 0, y = 0;
   function findViewCoords(mouseEvent) {
     if (mouseEvent) {
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded",function() {
     var el = elements[section].obj;
     var rect = el.getBoundingClientRect();
     console.log("x = " + x + " y = " + y + " left = " + rect.left + " top = " + rect.top + " width = " + rect.width + " height = " + rect.height );
-    if(rect.left <= x && rect.top >= x && rect.width <= y && rect.bottom >= y ) {
+    //if(rect.left <= x && rect.top >= x && rect.width <= y && rect.bottom >= y ) {
     if (e.deltaY < 0) {
       console.log('scrolling up');
       setInActive(elements[section].obj, liitems[section].obj);
@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded",function() {
       section = (section + 1) % 6;
       setActive(elements[section].obj, liitems[section].obj);
     }
+  //}
   }
-  }
-*/
+
   function a() {
     section = 0;
     for (var i = 0; i < elements.length; i++) {
