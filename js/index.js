@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded",function() {
   for (var i=0; i<lis.length; i++) {
     lis[i].addEventListener('click', functions[i].fun, false);
   }
-
+/*
   var x = 0, y = 0;
   function findViewCoords(mouseEvent) {
     if (mouseEvent) {
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded",function() {
     }
   //}
   }
-
+*/
   function a() {
     section = 0;
     for (var i = 0; i < elements.length; i++) {
