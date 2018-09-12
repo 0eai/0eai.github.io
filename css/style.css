@@ -1,8 +1,6 @@
-
-
-/*
-font-face
-*/
+/*######################################
+    - - - - - - FRONT FACE - - - - -
+#######################################*/
 
 @font-face {
 	font-family: 'Lato';
@@ -25,12 +23,25 @@ font-face
 	src: url('../assets/font/Anders.ttf');
 }
 
-/*
-font-face end
-*/
+/*######################################
+    - - - - - - MAIN - - - - -
+#######################################*/
+html, body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+	width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  font-family: 'Source code pro', sans-serif;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 .contant {
-  /*height: 100%;*/
   background: #fff;
   align-items: center;
   justify-content: center;
@@ -46,31 +57,14 @@ h1 {
   color: #202020;
   z-index: 10;
 }
+
 .footer {
   text-align: center;
   font-family: 'Source code pro', sans-serif;
   font-weight: bold;
   top: calc(100vh - 70px);
 }
-/*
-Tab switch
-*/
 
-@import url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/Anders.ttf");
-html, body {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-	width: 100%;
-  overflow: hidden;
-  background-color: #fff;
-  font-family: 'Source code pro', sans-serif;
-  font-weight: bold;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 .header {
   background: transparent;
   flex: 0 1 auto;
@@ -83,6 +77,10 @@ html, body {
   top: 0;
   right: 0;
 }
+
+/*######################################
+    - - - - - - TAB SWITCH - - - - -
+#######################################*/
 #line {
   position: relative;
   height: 3px;
@@ -222,11 +220,8 @@ html, body {
   color: #589CF7;
 }
 
-/*
-Tab switch end
-*/
 /*######################################
-- - - - - - SLIDER - - - - -
+     - - - - - - SLIDER - - - - -
 #######################################*/
 
 .slider {
@@ -242,7 +237,6 @@ Tab switch end
   height: auto;
   display: block;
   align-items: center;
-  transition: all .3s;
 }
 @media screen and (max-width: 992px) {
   .slider {
@@ -426,9 +420,11 @@ Tab switch end
 }
 
 
-/*- - - - - - C O N T A C T - C A R D S - - - - - */
+/*######################################
+   - - - - - - CONTACT CARD - - - - -
+#######################################*/
 .contact_card{
-display: block;
+  display: none;
 }
 .card{
   height: auto;
@@ -440,21 +436,14 @@ display: block;
 	border-radius: 10px;
 	border: solid 2px #589CF7;
 	text-align: center;
-	-webkit-transition: .1s ease-in-out;
-	transition: .1s ease-in-out;
 	margin-right: 50px;
+	padding-bottom: 10px;
 	z-index: 1;
 }
 
 	.card:last-of-type{
 		margin-right: 0px;
 	}
-
-	/*.card:hover{
-		margin-top: -25px;
-		box-shadow: 0 15px 20px rgba(0,0,0,0.1);
-	}*/
-
 
 .card_Avatar{
 	height: 110px;
@@ -471,89 +460,85 @@ display: block;
 	background-image: url("../assets/profile-pic.jpg");
 }
 
- a, i{
+a, i{
 	font-family: 'Source code pro', sans-serif;
 	font-weight: bold;
 	-webkit-transition: .1s ease-in-out;
 	transition: .1s ease-in-out;
 }
 
-	#name{
-    font-family: 'Source code pro', sans-serif;
-    font-weight: bold;
-		margin-top: 45px;
-		margin-bottom: 5px;
-		font-size: 18px;
-		color: #2a2a2a;
-	}
+#name {
+  font-family: 'Source code pro', sans-serif;
+  font-weight: bold;
+	margin-top: 45px;
+	margin-bottom: 5px;
+	font-size: 18px;
+	color: #2a2a2a;
+}
 
-	#resume{
-		font-family: 'Source code pro', sans-serif;
-		font-weight: bold;
-		color: #589CF7;
-		padding-left: 8px;
-		padding-right: 8px;
-		border: 2px solid #589CF7;
-		border-radius: 10px;
-		-webkit-transition: .1s ease-in-out;
-		transition: .1s ease-in-out;
-	}
+a {
+	display: block;
+	padding: 5px 0px;
+	font-size: 14px;
+	color: #3f3f3f;
+	text-decoration: none;
+}
 
-	a{
-		display: block;
-		padding: 5px 0px;
-		font-size: 14px;
-		color: #3f3f3f;
-		text-decoration: none;
-	}
+a:hover {
+	color: #589CF7;
+	cursor: pointer;
+}
 
-		a:hover{
-			color: #151515;
-			cursor: pointer;
-		}
-		#resume:hover{
-			color: #151515;
-			cursor: pointer;
-			border: 2px solid #151515;
-		}
-ul{
+#resume:hover {
+	color: #151515;
+	cursor: pointer;
+}
+
+ul {
 	margin-top: 10px;
-	padding: 15px 0px;
 	background-color: #fff;
 }
 
-	ul a{
-		display: inline;
-		margin-right: 10px;
-	}
+ul a {
+	display: inline;
+}
 
-		ul a:last-of-type{
-			margin-right: 0px;
-		}
+ul a:last-of-type {
+	margin-right: 0px;
+}
 
-		ul a i{
-			color: #589CF7;
-		}
+ul a i {
+	color: #589CF7;
+	height: 20px;
+	width: 20px;
+	padding: 8px;
+	font-size: 20px;
+	border: 2px solid transparent;
+  border-radius: 100%;
+	justify-content: center;
+	transition: all 0.4s linear;
+	position: relative;
+	align-items: center;
+}
 
-			ul a i:hover{
-				transform: scale(1.1);
-				color: inherit;
-			}
+ul a i:hover {
+	border-color: #589CF7;
+}
+
 /*######################################
       - - - - - - ABOUT - - - - -
 #######################################*/
+
 .about_card{
   height: auto;
   max-width: 600px;
-  width: 95%; /* ⬅ Size ~ Small (width: 200px), Medium (width: 225px), Large (width: 250px) */
+  width: 95%;
   overflow: hidden;
   background-color: #FFFFFF;
   border-radius: 10px;
 	display: none;
   border: solid 2px #589CF7;
   padding: 35px;
-  -webkit-transition: .1s ease-in-out;
-  transition: .1s ease-in-out;
   z-index: 1;
 }
 .about_desc{
@@ -564,12 +549,9 @@ ul{
   text-align:justify;
 }
 
-/* --------------------------------
-
-Navigation
-
--------------------------------- */
-
+/*######################################
+    - - - - - - NAVIGATION - - - - -
+#######################################*/
 .no-touch #cd-vertical-nav {
   position: fixed;
   left:40px;
@@ -670,11 +652,9 @@ Navigation
 }
 
 
-/* --------------------------------
-
-SKILLS
-
--------------------------------- */
+/*######################################
+     - - - - - - SKILLS - - - - -
+#######################################*/
 
 .skills-bar-container {
   position: relative;
