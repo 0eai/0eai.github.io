@@ -947,3 +947,82 @@ ul a i:hover {
     width: 70%;
   }
 }
+
+/*######################################
+     - - - - - - TERMINAL - - - - -
+#######################################*/
+.terminalmode {
+	width: 720px;
+	height: 480px;
+  position: absolute;
+  background: #fff;
+	border-radius: 10px;
+	border: solid 2px #589CF7;
+  justify-content: center;
+	display: none;
+}
+.terminal {
+  background-color: transparent;
+  opacity: 1;
+  height: 410px;
+  color: #202020;
+  font-family: 'Source code pro', monospace;
+	font-weight: bold;
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-y: inherit;
+  margin-left: 20px;
+	margin-right: 5px;
+	margin-top: 30px;
+  margin-bottom: 20px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	overflow: auto;
+}
+.terminal::after {
+  content: "|";
+  font-weight: 800;
+  animation: blink 2s steps(1) infinite;
+}
+
+.terminal .prompt {
+  font-size: 16px;
+  color: #4099ff;
+}
+
+.terminal .output {
+  color: #707070;
+}
+
+.terminal .question {
+  color: #4d4d4d;
+}
+
+.terminal .error {
+  color: #ff0000;
+}
+
+.terminal .info {
+  color: #545454;
+}
+
+.terminal .link {
+  color: #4099ff;
+}
+
+.terminal .bubble {
+  font-family: 'Material Icons';
+  color: #4099ff;
+  font-size: 16px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@keyframes blink {
+  50% {
+    color: transparent;
+  }
+}

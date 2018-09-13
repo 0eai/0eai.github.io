@@ -14,6 +14,10 @@ var swiper = new Swiper('.slider', {
   }
 });
 document.addEventListener("DOMContentLoaded",function() {
+  const nav = document.getElementById('cd-vertical-nav');
+  const terminalWindow = document.getElementById('terminalmode');
+  const terminal = document.getElementById('terminal');
+
   const line = document.getElementById('line');
   const rightHandle = document.getElementById('rightHandle');
   const leftHandle = document.getElementById('leftHandle');
@@ -39,6 +43,7 @@ document.addEventListener("DOMContentLoaded",function() {
   const liitems = [{obj : lihome}, {obj : liabout}, {obj : liskills}, {obj : liportfolio}, {obj : licertification}, {obj : lieducation}/*, {obj : lireferences}*/];
 
   var lis = document.getElementById("menu-list").getElementsByTagName('li');
+  var section = 0;
 
   setActive(elements[0].obj, liitems[0].obj);
   for (var i=1; i<lis.length; i++) {
@@ -122,7 +127,7 @@ document.addEventListener("DOMContentLoaded",function() {
     }
   }
 
-  rightHandle.addEventListener('click', (e) => {
+  /*rightHandle.addEventListener('click', (e) => {
 	  line.classList.remove('left');
 	  line.classList.add('right');
 		if(!e.target.classList.contains('active')){
@@ -132,6 +137,7 @@ document.addEventListener("DOMContentLoaded",function() {
 			},300);
 			setTimeout( () =>{
 				e.target.classList.add('show');
+        terminalMode();
 			},600);
 		}
   });
@@ -146,7 +152,20 @@ document.addEventListener("DOMContentLoaded",function() {
 			},300);
 			setTimeout( () =>{
 				e.target.classList.add('show');
+        normalMode();
 			},600);
 		}
   });
+*/
+  function terminalMode() {
+    nav.style.display = 'none';
+    terminalWindow.style.display = 'block';
+    setInActive(elements[section].obj, liitems[section].obj);
+  }
+
+  function normalMode() {
+    nav.style.display = 'block';
+    terminalWindow.style.display = 'none';
+    setActive(elements[section].obj, liitems[section].obj);
+  }
 });
