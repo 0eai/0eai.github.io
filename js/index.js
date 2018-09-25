@@ -13,9 +13,11 @@ var swiper = new Swiper('.slider', {
     clickable: true,
   }
 });
+
 document.addEventListener("DOMContentLoaded",function() {
+
   const nav = document.getElementById('cd-vertical-nav');
-  const terminalWindow = document.getElementById('terminalmode');
+  const terminalWindow = document.getElementById('terminal-window');
   const terminal = document.getElementById('terminal');
 
   const line = document.getElementById('line');
@@ -127,7 +129,7 @@ document.addEventListener("DOMContentLoaded",function() {
     }
   }
 
-  /*rightHandle.addEventListener('click', (e) => {
+  rightHandle.addEventListener('click', (e) => {
 	  line.classList.remove('left');
 	  line.classList.add('right');
 		if(!e.target.classList.contains('active')){
@@ -156,7 +158,6 @@ document.addEventListener("DOMContentLoaded",function() {
 			},600);
 		}
   });
-*/
   function terminalMode() {
     nav.style.display = 'none';
     terminalWindow.style.display = 'block';

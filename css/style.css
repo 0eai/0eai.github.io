@@ -78,22 +78,88 @@ h1 {
   right: 0;
 }
 
+
+.bkcolor-1 {
+  background-color: #c0392b;
+}
+.bkcolor-2 {
+  background-color: #1199ff;
+}
+.bkcolor-3 {
+  background-color: #ffa500;
+}
+.bkcolor-4 {
+  background-color: #AA5585;
+}
+.bkcolor-5 {
+  background-color: #25bcbd;
+}
+.bkcolor-6 {
+  background-color: #D6603A;
+}
+.bkcolor-7 {
+  background-color: #4d9de0;
+}
+.bkcolor-8 {
+  background-color: #ffd000;
+}
+.bkcolor-9 {
+  background-color: #726867;
+}
+.bkcolor-10 {
+  background-color: #393d46;
+}
+
+.color-1 {
+  color: #c0392b;
+}
+.color-2 {
+  color: #1199ff;
+}
+.color-3 {
+  color: #ffa500;
+}
+.color-4 {
+  color: #AA5585;
+}
+.color-5 {
+  color: #c0392b;
+}
+.color-6 {
+  color: #1199ff;
+}
+.color-7 {
+  color: #ffa500;
+}
+.color-8 {
+  color: #AA5585;
+}
+.color-9 {
+  color: #c0392b;
+}
+.color-10 {
+  color: #1199ff;
+}
+
+
+
 /*######################################
     - - - - - - TAB SWITCH - - - - -
 #######################################*/
 #line {
   position: relative;
-  height: 3px;
+  height: 5px;
   width: 250px;
-  background-color: #4D565B;
+  /*background-color: #4D565B;*/
+	background-color: #AA5585;
   font-family: 'Source code pro', sans-serif;
 	font-weight: bold;
 }
 #line.right::after {
   content: '';
   position: absolute;
-  left: 3px;
-  height: 3px;
+  left: 5px;
+  height: 5px;
   background-color: #589CF7;
   animation-name: left-to-right;
   animation-duration: .4s;
@@ -103,8 +169,8 @@ h1 {
 #line.left::after {
   content: '';
   position: absolute;
-  right: 3px;
-  height: 3px;
+  right: 5px;
+  height: 5px;
   background-color: #589CF7;
   animation-name: right-to-left;
   animation-duration: .4s;
@@ -145,14 +211,14 @@ h1 {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  border: 2px solid #4D565B;
+  border: 5px solid #AA5585;
   cursor: pointer;
   background-color: #fff;
   transition: all .3s ease;
   z-index: 5;
 }
 #line .circle-right {
-  right: calc(-15px - 3px);
+  right: calc(-15px - 5px);
 }
 #line .circle-right ::after {
   content: '';
@@ -186,7 +252,7 @@ h1 {
   color: #589CF7;
 }
 #line .circle-left {
-  left: calc(-15px - 3px);
+  left: calc(-15px - 5px);
 }
 #line .circle-left ::after {
   content: '';
@@ -227,11 +293,11 @@ h1 {
 .slider {
   width: 95%;
   position: relative;
-  max-width: 700px;
+  max-width: 600px;
   margin: auto;
   background: #fff;
   justify-content: center;
-  border: solid 2px #589CF7;
+  border: solid 5px #589CF7;
   padding: 35px;
   border-radius: 10px;
   height: auto;
@@ -434,7 +500,7 @@ h1 {
 	margin-bottom: 70px;
 	background-color: #FFFFFF;
 	border-radius: 10px;
-	border: solid 2px #589CF7;
+	border: solid 5px #589CF7;
 	text-align: center;
 	margin-right: 50px;
 	padding-bottom: 10px;
@@ -452,7 +518,7 @@ h1 {
 	background-size: cover;
 	background-position: center;
 	background-color: #fff;
-	border: 2px solid #589CF7;
+	border: 5px solid #589CF7;
 	border-radius: 100%;
 	z-index: 2;
 	position:relative;
@@ -537,7 +603,7 @@ ul a i:hover {
   background-color: #FFFFFF;
   border-radius: 10px;
 	display: none;
-  border: solid 2px #589CF7;
+  border: solid 5px #589CF7;
   padding: 35px;
   z-index: 1;
 }
@@ -752,10 +818,6 @@ ul a i:hover {
   animation-delay: 3.5s;
 }
 
-.progresscolor {
-  background-color: #589CF7;
-}
-
 @-webkit-keyframes progress-c {
   0% {
     width: 0%;
@@ -951,34 +1013,42 @@ ul a i:hover {
 /*######################################
      - - - - - - TERMINAL - - - - -
 #######################################*/
-.terminalmode {
+.terminal-window {
 	width: 720px;
 	height: 480px;
   position: absolute;
   background: #fff;
 	border-radius: 10px;
-	border: solid 2px #589CF7;
+	border: solid 5px #589CF7;
   justify-content: center;
 	display: none;
+}
+.terminal-window .terminal-title {
+  height: 30px;
+  color: #fff;
+	background-color: #589CF7;
+  font-family: "Source code pro", sans-serif;
+  font-size: 13px;
+  line-height: 22px;
+  text-align: center;
 }
 .terminal {
   background-color: transparent;
   opacity: 1;
-  height: 410px;
+  height: 438px;
   color: #202020;
   font-family: 'Source code pro', monospace;
 	font-weight: bold;
   font-size: 14px;
   white-space: pre-wrap;
   word-wrap: break-word;
-  overflow-y: inherit;
-  margin-left: 20px;
-	margin-right: 5px;
-	margin-top: 30px;
-  margin-bottom: 20px;
 	padding-top: 12px;
-	padding-bottom: 12px;
-	overflow: auto;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin-right: 4px;
+	overflow-y: scroll;
+	border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .terminal::after {
   content: "|";
@@ -1011,10 +1081,24 @@ ul a i:hover {
   color: #4099ff;
 }
 
-.terminal .bubble {
-  font-family: 'Material Icons';
-  color: #4099ff;
-  font-size: 16px;
+#terminal::-webkit-scrollbar-track {
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+	border-radius: 10px;
+	background-color: transparent;
+	margin-bottom: 4px;
+	margin-top: 4px;
+	background-clip: content-box;
+}
+
+#terminal::-webkit-scrollbar {
+	width: 5px;
+	background-color: transparent;
+}
+
+#terminal::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #589CF7;
 }
 
 .link:hover {

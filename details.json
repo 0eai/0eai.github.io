@@ -1,0 +1,107 @@
+{
+  "name": "Ankit Kumar Singh",
+  "email": "iamanspire@gmail.com",
+  "phone": "+919472878180",
+  "website": "http://anspire.me",
+  "resume": "http://anspire.me/assets/resume.pdf",
+  "about": "Im a MCA student at Department of Computer Science(School of Engineering & Technology), Pondicherry University, Puducherry. My program is focused on application aspects of Computer Science which includes programming, data structures, computer architecture, algorithm design & analysis, operating systems, object oriented programming, software engineering. Along with these i studied here about web technology,cloud computing, networking and artificial intelligence. Personally im so much interested in Android development, algorithms & data structure, c++ & java programming. apart from above I like Cricket and music.",
+  "socialaccounts": {
+    "github": "https://github.com/Anspire",
+    "linkedin": "https://www.linkedin.com/in/anspire/",
+    "playstore": "https://play.google.com/store/apps/developer?id=ANKIT+KUMAR+SINGH",
+    "telegram": "https://t.me/anspire",
+    "facebook": "https://www.facebook.com/ankitsingh111",
+    "twitter": ""
+  },
+  "skills": [
+    {"name": "C & C++", "percent": 80},
+    {"name": "APP DEVELOPMENT(ANDROID,DESKTOP)", "percent": 60},
+    {"name": "JAVA", "percent": 70},
+    {"name": "BACKEND DEVELOPMENT(NODEJS)", "percent": 60},
+    {"name": "VERSION CONTROL(GIT, GITHUB)", "percent": 80},
+    {"name": "JAVASCRIPT", "percent": 80},
+    {"name": "PYTHON", "percent": 60},
+    {"name": "NETWORKING", "percent": 70}
+  ],
+  "projects": [
+    {"startdate": "JAN 2018", "enddate": "MAR 2019", "title": "Hash Include", "tag": "Android", "description": "This is official app for hashinclude club - Pondicherry University. This is an open source project.", "links": [
+        {"link": "https://github.com/Anspire/hashinclude", "name": "github"},
+        {"link": "https://play.google.com/store/apps/details?id=hash.include", "name": "google-play"},
+        {"link": "http://anspire.me/hash/include", "name": "web"}
+      ]
+    },
+    {"start-date": "AUG 2018", "end-date": "Ongoing", "title": "Gapashap", "tag": "Electron (JavaScript)", "description": "Real time messaging maltiplatform desktop application.", "links": [
+        {"link": "https://github.com/Anspire/gapashap", "name": "github"}
+      ]
+    },
+    {"start-date": "APRIL 2018", "end-date": "", "title": "Remote Control", "tag": "Android | JavaScript(RobotJS)", "description": "Desktop Automation. Remotely control computer using android based smartphone.", "links": [
+        {"link": "https://github.com/Anspire/Remote-Control", "name": "github"}
+      ]
+    },
+    {"start-date": "SEPT 2018", "end-date": "Ongoing", "title": "Anspire", "tag": "JavaScript | html | css", "description": "Web Application.", "links": [
+        {"link": "https://github.com/Anspire/Anspire.github.io", "name": "github"},
+        {"link": "http://anspire.me", "name": "web"}
+      ]
+    },
+    {"start-date": "AUG 2018", "end-date": "", "title": "encrypto", "tag": "NodeJS", "description": "Command line application for encryption and decryption of files.", "links": [
+        {"link": "https://github.com/Anspire/encrypto", "name": "github"}
+      ]
+    },
+    {"start-date": "SEP 2018", "end-date": "", "title": "Presentation Control", "tag": "Android | JavaScript(RobotJS)", "description": "Presentation Control using android based smartphone.", "links": [
+        {"link": "https://github.com/Anspire/presentation-control-android", "name": "github"}
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "date": "SEP 2017",
+      "title": "Programming in C++",
+      "platform": "NPTEL",
+      "percent": 91,
+      "description": "Secured place in top 1% of successful candidates. (Gold category).",
+      "link": "https://nptel.ac.in/noc/social_cert/noc17-cs24/NPTEL17CS24S1640245171062583.jpg"
+    },
+    {
+      "date": "SEP 2017",
+      "title": "Introduction to Programming in C",
+      "platform": "NPTEL",
+      "percent": 84,
+      "description": "Secured place in top 5% of successful candidates.",
+      "link": "https://nptel.ac.in/noc/social_cert/noc17-cs43/NPTEL17CS43S2620292171062583.jpg"
+    },
+    {
+      "date": "MAR 2018",
+      "title": "Information Security - IV",
+      "platform": "NPTEL",
+      "percent": 67,
+      "description": "",
+      "link": "https://nptel.ac.in/noc/social_cert/noc18-cs24/NPTEL18CS24S37200811810073687.jpg"
+    },
+    {
+      "date": "DEC 2017",
+      "title": "The Online Marketing Fundamentals",
+      "platform": "Google Digital Garage",
+      "percent": 0,
+      "description": "",
+      "link": "https://drive.google.com/file/d/1ljZx69I3un_NQPoBkL2HMN-5OC9g5gEW/view"
+    }
+  ],
+  "education": [
+    {
+      "date": "2016 - 2019",
+      "degree": "Master's Degree",
+      "college": "PONDICHERRY UNIVERSITY",
+      "title": "Master of Computer Application",
+      "description": "Currently pursuing my master’s from department Of computer science(School of Engineering and Technology)",
+      "link": "http://www.pondiuni.edu.in"
+    },
+    {
+      "date": "2013 - 2016",
+      "degree": "Bachelor's Degree",
+      "college": "M.D COLLEGE (MAGADH UNIVERSITY)",
+      "title": "Bachelor of Computer Application",
+      "description": "Completed BCA in with (64%).",
+      "link": "http://www.maltidharicollege.org"
+    }
+  ]
+}
