@@ -215,6 +215,7 @@ var passwordPrompt = '[anspire] password for '
           function clear() {
               var terminal = document.getElementById('terminal')
               terminal.innerText = ''
+							output('Enter "help" or "h" for more information.');
             }
 
             function close() {
@@ -448,6 +449,6 @@ var passwordPrompt = '[anspire] password for '
       }
     }
   }
-
+	output('Enter "help" or "h" for more information.');
   prompt();
 });
