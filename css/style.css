@@ -611,7 +611,7 @@ ul a i:hover {
   font-family: 'Source code pro', sans-serif;
   font-weight: bold;
   text-align: center;
-  line-height: 1.61;
+  line-height: 1.5;
   text-align:justify;
 }
 
@@ -1022,24 +1022,27 @@ ul a i:hover {
 	border: solid 5px #589CF7;
   justify-content: center;
 	display: none;
+	font-weight: bold;
 }
 .terminal-window .terminal-title {
   height: 30px;
   color: #fff;
 	background-color: #589CF7;
   font-family: "Source code pro", sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 22px;
   text-align: center;
+	font-weight: bold;
 }
 .terminal {
   background-color: transparent;
   opacity: 1;
   height: 438px;
-  color: #202020;
+  color: #212121
   font-family: 'Source code pro', monospace;
 	font-weight: bold;
   font-size: 14px;
+	line-height: 1.2;
   white-space: pre-wrap;
   word-wrap: break-word;
 	padding-top: 12px;
@@ -1062,7 +1065,7 @@ ul a i:hover {
 }
 
 .terminal .output {
-  color: #707070;
+  color: #202020;
 }
 
 .terminal .question {
@@ -1079,6 +1082,7 @@ ul a i:hover {
 
 .terminal .link {
   color: #4099ff;
+	display: inline;
 }
 
 #terminal::-webkit-scrollbar-track {

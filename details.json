@@ -4,7 +4,7 @@
   "phone": "+919472878180",
   "website": "http://anspire.me",
   "resume": "http://anspire.me/assets/resume.pdf",
-  "about": "Im a MCA student at Department of Computer Science(School of Engineering & Technology), Pondicherry University, Puducherry. My program is focused on application aspects of Computer Science which includes programming, data structures, computer architecture, algorithm design & analysis, operating systems, object oriented programming, software engineering. Along with these i studied here about web technology,cloud computing, networking and artificial intelligence. Personally im so much interested in Android development, algorithms & data structure, c++ & java programming. apart from above I like Cricket and music.",
+  "about": "I'm a MCA student at Department of Computer Science(School of Engineering & Technology), Pondicherry University, Puducherry. My program is focused on application aspects of Computer Science which includes programming, data structures, computer architecture, algorithm design & analysis, operating systems, object oriented programming, software engineering. Along with these i studied here about web technology,cloud computing, networking and artificial intelligence. Personally i'm so much interested in Android development, algorithms & data structure, c++ & java programming. apart from above I like Cricket and music.",
   "socialaccounts": {
     "github": "https://github.com/Anspire",
     "linkedin": "https://www.linkedin.com/in/anspire/",
@@ -30,24 +30,24 @@
         {"link": "http://anspire.me/hash/include", "name": "web"}
       ]
     },
-    {"start-date": "AUG 2018", "end-date": "Ongoing", "title": "Gapashap", "tag": "Electron (JavaScript)", "description": "Real time messaging maltiplatform desktop application.", "links": [
+    {"startdate": "AUG 2018", "enddate": "Ongoing", "title": "Gapashap", "tag": "Electron (JavaScript)", "description": "Real time messaging maltiplatform desktop application.", "links": [
         {"link": "https://github.com/Anspire/gapashap", "name": "github"}
       ]
     },
-    {"start-date": "APRIL 2018", "end-date": "", "title": "Remote Control", "tag": "Android | JavaScript(RobotJS)", "description": "Desktop Automation. Remotely control computer using android based smartphone.", "links": [
+    {"startdate": "APRIL 2018", "enddate": "", "title": "Remote Control", "tag": "Android | JavaScript(RobotJS)", "description": "Desktop Automation. Remotely control computer using android based smartphone.", "links": [
         {"link": "https://github.com/Anspire/Remote-Control", "name": "github"}
       ]
     },
-    {"start-date": "SEPT 2018", "end-date": "Ongoing", "title": "Anspire", "tag": "JavaScript | html | css", "description": "Web Application.", "links": [
+    {"startdate": "SEPT 2018", "enddate": "Ongoing", "title": "Anspire", "tag": "JavaScript | html | css", "description": "Web Application.", "links": [
         {"link": "https://github.com/Anspire/Anspire.github.io", "name": "github"},
         {"link": "http://anspire.me", "name": "web"}
       ]
     },
-    {"start-date": "AUG 2018", "end-date": "", "title": "encrypto", "tag": "NodeJS", "description": "Command line application for encryption and decryption of files.", "links": [
+    {"startdate": "AUG 2018", "enddate": "", "title": "encrypto", "tag": "NodeJS", "description": "Command line application for encryption and decryption of files.", "links": [
         {"link": "https://github.com/Anspire/encrypto", "name": "github"}
       ]
     },
-    {"start-date": "SEP 2018", "end-date": "", "title": "Presentation Control", "tag": "Android | JavaScript(RobotJS)", "description": "Presentation Control using android based smartphone.", "links": [
+    {"startdate": "SEP 2018", "enddate": "", "title": "Presentation Control", "tag": "Android | JavaScript(RobotJS)", "description": "Presentation Control using android based smartphone.", "links": [
         {"link": "https://github.com/Anspire/presentation-control-android", "name": "github"}
       ]
     }

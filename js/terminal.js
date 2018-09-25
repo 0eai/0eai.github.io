@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded",function() {
 		"use strict";
   //var title = $(".title");
   var terminal = document.getElementById('terminal')
+	const leftHandle = document.getElementById('leftHandle');
 
   var commandHistory = []
   var historyIndex = 0
@@ -124,7 +125,9 @@ var passwordPrompt = '[anspire] password for '
        if (strs[i].startsWith('https://') || strs[i].startsWith('http://') || strs[i].startsWith('file:///')) {
          var a = document.createElement('a')
          a.innerText = strs[i]
+				 a.href = strs[i]
          a.className = 'link'
+				 a.target = '_blank'
          span.appendChild(a)
          span.append(' ')
        } else {
@@ -136,22 +139,8 @@ var passwordPrompt = '[anspire] password for '
   // END UTILITY
   // Commands ######################################################################################
   //##########################################################################################
-	const name_ = 'Ankit Kumar Singh';
-	const email_ = 'iamanspire@gmail.com';
-	const resumelink_ = 'http://anspire.me/assets/resume.pdf';
-	const github_ = 'https://github.com/Anspire';
-	const facebook_ = 'https://www.facebook.com/ankitsingh111';
-	const telegram_ = 'https://t.me/anspire';
-	const playStore_ = 'https://play.google.com/store/apps/developer?id=ANKIT+KUMAR+SINGH';
-	const linkedin_ = 'https://www.linkedin.com/in/anspire/';
-	const about_ = 'Im a MCA student at Department of Computer Science(School of Engineering & Technology), Pondicherry University, Puducherry. My program is focused on application aspects of Computer Science which includes programming, data structures, computer architecture, algorithm design & analysis, operating systems, object oriented programming, software engineering. Along with these i studied here about web technology,cloud computing, networking and artificial intelligence. Personally im so much interested in Android development, algorithms & data structure, c++ & java programming. apart from above I like Cricket and music.';
-	const skills_ = 'Ankit Kumar Singh';
-	const certificates_ = 'Ankit Kumar Singh';
-	const educations_ = 'Ankit Kumar Singh';
-	const portfolio_ = 'Ankit Kumar Singh';
 
 	function loadJSON(callback) {
-
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
     xobj.open('GET', 'details.json', true); // Replace 'my_data' with the path to your file
@@ -164,9 +153,9 @@ var passwordPrompt = '[anspire] password for '
     };
     xobj.send(null);
  }
- var details
+
+ var details;
  loadJSON(function(response) {
-  // Parse JSON string into object
     details = JSON.parse(response);
  });
 
@@ -229,46 +218,81 @@ var passwordPrompt = '[anspire] password for '
             }
 
             function close() {
-
+							clear();
+							leftHandle.click();
             }
 
             function socialAccounts() {
-							output(details.socialaccounts.github);
+							var data = details.socialaccounts
+							var str = '\n● ● ●\nGithub : ' + data.github + ' \n' + 'Linkedin : ' + data.linkedin + ' \n' + 'Play Store : ' + data.playstore + ' \n' + 'Telegram : ' + data.telegram + ' \n' + 'Facebook : ' + data.facebook + '\n'
+							output(str);
             }
 
             function resume() {
-							var str = 'http://anspire.me/assets/resume.pdf';
+							var str = '\n● ● ●\nResume : http://anspire.me/assets/resume.pdf\n';
 							output(str);
 							window.open('http://anspire.me/assets/resume.pdf', '_blank');
             }
 
             function contact() {
-							var str = 'anspire: command not found: ' + command;
+							var str = '\n● ● ●\nName : ' + details.name + '\nPhone no. : ' + details.phone + '\nEmail : ' + details.email + '\n'
 							output(str);
             }
 
             function about() {
-							var str = 'anspire: command not found: ' + command;
+							var str = '\n● ● ●\n' + details.about + '\n'
 							output(str);
             }
 
             function skill() {
-							var str = 'anspire: command not found: ' + command;
+							var data = details.skills
+							var str = '\n● ● ●\n'
+							for (var i = 0; i < data.length; i++) {
+								str = str + data[i].name + '\n'
+							}
 							output(str);
             }
 
             function portfolio() {
-							var str = 'anspire: command not found: ' + command;
+							var data = details.projects
+							var str = '\n'
+							for (var i = 0; i < data.length; i++) {
+								str = str + '● ● ●\n' + data[i].startdate + ' - ' + data[i].enddate + '\n' + data[i].title + '\n' + data[i].tag + '\n' + data[i].description + '\n  '
+								for (var j = 0; j < data[i].links.length; j++) {
+									str = str + data[i].links[j].link + '\n  '
+								}
+								str = str + '\n'
+							}
 							output(str);
             }
 
             function certification() {
-							var str = 'anspire: command not found: ' + command;
+							var data = details.certificates
+							var str = '\n'
+							for (var i = 0; i < data.length; i++) {
+								if (data[i].percent == 0) {
+									if (data[i].description == "") {
+										str = str + '● ● ●\n' + data[i].date + '\n' + data[i].title + '\n@ ' + data[i].platform + '\n' + 'Certificate link : ' + data[i].link + ' \n\n'
+									} else {
+										str = str + '● ● ●\n' + data[i].date + '\n' + data[i].title + '\n@ ' + data[i].platform + '\n' + data[i].description + ' \nCertificate link : ' + data[i].link + ' \n\n'
+									}
+								} else {
+									if (data[i].description == "") {
+										str = str + '● ● ●\n' + data[i].date + '\n' + data[i].title + '\n@ ' + data[i].platform + '\n' + data[i].percent + '%\n' + 'Certificate link : ' + data[i].link + ' \n\n'
+									} else {
+										str = str + '● ● ●\n' + data[i].date + '\n' + data[i].title + '\n@ ' + data[i].platform + '\n' + data[i].percent + '%\n' + data[i].description + ' \nCertificate link : ' + data[i].link + ' \n\n'
+									}
+								}
+							}
 							output(str);
             }
 
             function education() {
-							var str = 'anspire: command not found: ' + command;
+							var data = details.education
+							var str = '\n'
+							for (var i = 0; i < data.length; i++) {
+								str = str + '● ● ●\n' + data[i].date + '\n' + data[i].degree + '\n' + data[i].title + '\n@ ' + data[i].college + '\n' + data[i].description + '\n\n'
+							}
 							output(str);
             }
 
@@ -313,6 +337,15 @@ var passwordPrompt = '[anspire] password for '
     //clean up.
     command = ''
   }
+	var ScrollRate = 100;
+	var PreviousScrollTop = 0;
+
+	function scrollTerminal() {
+		while (PreviousScrollTop < terminal.scrollHeight) {
+			terminal.scrollTop = PreviousScrollTop;
+			PreviousScrollTop++;
+		}
+	}
 
   function help() {
     var cmdHelp = '\n ● Anspire\n\n  Root Commands:\n  '
@@ -407,6 +440,7 @@ var passwordPrompt = '[anspire] password for '
           terminal.append("\n");
           processCommand();
           prompt();
+					scrollTerminal();
           break;
       }
       default: {
