@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<p id="url"></p>
 <p id="text"></p>
-
 <script>
 function getUrlVars() {
     var vars = {};
@@ -55,13 +52,7 @@ function loadDoc(url) {
   xhttp.send();
 }
 loadDoc(getUrlVars()['url'])    
-    
-document.getElementById("url").innerHTML = getUrlVars()['url'];
 </script>
 
-<noscript>Sorry, your browser does not support JavaScript!</noscript>
-
-<p>A browser without support for JavaScript will show the text written inside the noscript element.</p>
- 
 </body>
 </html>
