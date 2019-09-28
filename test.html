@@ -3,6 +3,7 @@
 <body>
 <p id="text"></p>
 <script>
+    
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -11,22 +12,6 @@ function getUrlVars() {
     return vars;
 }
 
-function downloadBlob(blob, filename) {
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename || 'download';
-  const clickHandler = () => {
-    setTimeout(() => {
-      URL.revokeObjectURL(url);
-      this.removeEventListener('click', clickHandler);
-    }, 150);
-  };
-  a.addEventListener('click', clickHandler, false);
-  a.click();
-  return a;
-}
-    
 function download(filename, text) {
     var element = document.createElement('a');
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -44,15 +29,15 @@ function loadDoc(url) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("text").innerHTML = this.responseText;
       download(url.substring(url.lastIndexOf('/')+1), this.responseText)
     }
   };
   xhttp.open("GET", url, true);
   xhttp.send();
 }
-loadDoc(getUrlVars()['url'])    
-</script>
+    
+loadDoc(getUrlVars()['url']) 
 
+</script>
 </body>
 </html>
