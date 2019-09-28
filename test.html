@@ -42,11 +42,17 @@ function download(filename, text) {
     document.body.removeChild(element);
 }
     
-fetch(getUrlVars()['url'])
-  .then(response => response.blob())
-  .then(blob => {
-    downloadBlob(blob, getUrlVars()['url'].substring(url.lastIndexOf('/')+1));
-  });
+function loadDoc(url) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      download(url.substring(url.lastIndexOf('/')+1), this.responseText)
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+loadDoc(getUrlVars()['url'])    
     
 document.getElementById("demo").innerHTML = getUrlVars()['url'];
 </script>
