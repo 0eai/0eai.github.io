@@ -42,10 +42,10 @@ function download(filename, text) {
     document.body.removeChild(element);
 }
     
-fetch(window.location.pathname)
+fetch(getUrlVars()['url'])
   .then(response => response.blob())
   .then(blob => {
-    downloadBlob(blob, window.location.pathname.substring(url.lastIndexOf('/')+1));
+    downloadBlob(blob, getUrlVars()['url'].substring(url.lastIndexOf('/')+1));
   });
     
 document.getElementById("demo").innerHTML = getUrlVars()['url'];
