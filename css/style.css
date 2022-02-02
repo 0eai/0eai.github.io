@@ -3,10 +3,24 @@
 #######################################*/
 
 @font-face {
+	font-family: 'Lato';
+    font-weight: 800;
+    font-style: normal;
+	src: url('../assets/font/Lato-Regular.ttf');
+}
+
+@font-face {
 	font-family: 'Source code pro';
     font-weight: 100;
     font-style: normal;
 	src: url('../assets/font/Source code pro.woff2');
+}
+
+@font-face {
+	font-family: 'Anders';
+    font-weight: 500;
+    font-style: normal;
+	src: url('../assets/font/Anders.ttf');
 }
 
 /*######################################
@@ -108,7 +122,7 @@ h1 {
 	border-radius: 100%;
 	z-index: 2;
 	position:relative;
-	top: 35px;
+	top: 24px;
 	background-image: url("../assets/profile-pic.jpg");
 }
 
@@ -147,7 +161,7 @@ a:hover {
 }
 
 ul {
-	margin-top: 48px;
+	margin-top: 24px;
 	background-color: #fff;
 }
 
