@@ -10,7 +10,6 @@
     "linkedin": "https://www.linkedin.com/in/anspire/",
     "playstore": "https://play.google.com/store/apps/developer?id=ANKIT+KUMAR+SINGH",
     "telegram": "https://t.me/anspire",
-    "facebook": "https://www.facebook.com/ankitsingh111",
     "twitter": "https://twitter.com/aksbihta"
   },
   "skills": [
@@ -18,7 +17,6 @@
     {"name": "APP DEVELOPMENT(ANDROID,DESKTOP)", "percent": 60},
     {"name": "JAVA", "percent": 70},
     {"name": "BACKEND DEVELOPMENT(NODEJS)", "percent": 60},
-    {"name": "VERSION CONTROL(GIT, GITHUB)", "percent": 80},
     {"name": "JAVASCRIPT", "percent": 80},
     {"name": "PYTHON", "percent": 60},
     {"name": "NETWORKING", "percent": 70}
