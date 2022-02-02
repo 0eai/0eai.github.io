@@ -1,17 +1,17 @@
 {
   "name": "Ankit Kumar Singh",
-  "email": "iamanspire@gmail.com",
-  "phone": "+919472878180",
-  "website": "http://anspire.me",
-  "resume": "http://anspire.me/assets/resume.pdf",
+  "email": "aks.bihta@gmail.com",
+  "phone": "+82-00-0000-0000",
+  "website": "https://anspire.github.io/",
+  "resume": "https://anspire.github.io/assets/resume.pdf",
   "about": "I'm a MCA student at Department of Computer Science(School of Engineering & Technology), Pondicherry University, Puducherry. My program is focused on application aspects of Computer Science which includes programming, data structures, computer architecture, algorithm design & analysis, operating systems, object oriented programming, software engineering. Along with these i studied here about web technology,cloud computing, networking and artificial intelligence. Personally i'm so much interested in Android development, algorithms & data structure, c++ & java programming. apart from above I like Cricket and music.",
   "socialaccounts": {
-    "github": "https://github.com/Anspire",
+    "github": "https://github.com/anspire",
     "linkedin": "https://www.linkedin.com/in/anspire/",
     "playstore": "https://play.google.com/store/apps/developer?id=ANKIT+KUMAR+SINGH",
     "telegram": "https://t.me/anspire",
     "facebook": "https://www.facebook.com/ankitsingh111",
-    "twitter": ""
+    "twitter": "https://twitter.com/aksbihta"
   },
   "skills": [
     {"name": "C & C++", "percent": 80},
