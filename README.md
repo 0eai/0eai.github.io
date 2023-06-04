@@ -1,4 +1,4 @@
-# Ankit Kumar Singh
+# <center>Ankit Kumar Singh</center>
 [0eai.github.io](https://0eai.github.io/)
 
 
