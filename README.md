@@ -1,4 +1,4 @@
-<h1 style="text-align: center;">Ankit Kumar Singh</h1>
+# Ankit Kumar Singh
 [0eai.github.io](https://0eai.github.io/)
 
 
