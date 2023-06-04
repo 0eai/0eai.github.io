@@ -1,5 +1,5 @@
 # Ankit Kumar Singh
-![0eai](https://0eai.github.io/)
+[0eai.github.io](https://0eai.github.io/)
 
 
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/0eai/0eai.github.io/master)
