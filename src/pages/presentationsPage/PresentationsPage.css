@@ -1,0 +1,39 @@
+.presentation-page-content{
+    border: 2px solid black;
+    border-radius: 1rem;
+    overflow: auto;
+    height: 418px;
+}
+
+.presentation-page-content .details{
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    margin: 1.5rem;
+    
+}
+
+.presentation-page-content .details #topic-name{
+    font-size: 1.2rem;
+    color: black;
+    margin-bottom: 1rem;
+}
+.presentation-page-content .details #authors{
+    font-size: 1.2rem;
+    color: rgb(88, 88, 88);
+    margin-bottom: 1rem;
+}
+.presentation-page-content .details #place{
+    font-size: 1.2rem;
+    color: rgb(164, 164, 164);
+    margin-bottom: 1rem;
+}
+.presentation-page-content .details #links{
+    font-size: 1.2rem;
+    color: #589cf7;
+    margin-bottom: 1rem;
+}
+.presentation-page-content .details #links span{
+    margin-right: 1rem;
+    font-weight: 300;
+}

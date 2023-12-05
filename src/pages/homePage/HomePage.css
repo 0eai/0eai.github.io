@@ -1,0 +1,114 @@
+.home-page-content {
+  /* position: fixed;
+  top: 0%;
+  left: 10%;
+  right: 10%;
+  bottom: 0%;
+  margin: auto; */
+  display: flex;
+  margin-left: 20%;
+  margin-right: 20%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.card-content {
+  border: 2px solid black;
+  border-radius: 1rem;
+  overflow: auto;
+  height: 418px;
+}
+.card_Avatar {
+  max-height: 250px;
+  max-width: 250px;
+}
+.profile-image {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  /* height: 100%; */
+  flex-direction: column;
+}
+
+
+.profile-image::after {
+  
+}
+@media screen and (max-width: 767px) {
+  .partition-dash{
+    /* content: ""; */
+    width: 40%;
+    margin-top: 15px;
+    border-bottom: 3px solid #589cf7;
+    background-color: #589cf7;
+  }
+  .profile-image::after {
+
+  }
+}
+@media screen and (min-width: 767px) {
+  .profile-image::after {
+    content: "";
+    height: 40%;
+    width: 3px;
+    border-radius: 0.5rem;
+    position: absolute;
+    right: 0;
+    top: 30%;
+    background-color: #589cf7;
+  }
+}
+
+#personal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 3rem;
+  /* padding-left: 6rem;
+    padding-right: 6rem; */
+  height: 100%;
+}
+#college-name {
+  font-size: 2rem;
+}
+#post-name {
+  font-size: 1.2rem;
+}
+
+#location {
+  font-size: 1.2rem;
+}
+
+#designation {
+  font-size: 1.2rem;
+  max-width: 320px;
+  display: flex;
+}
+
+a,
+i {
+  font-family: "Source code pro", sans-serif;
+  font-weight: bold;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+a:hover {
+  color: #589cf7;
+  cursor: pointer;
+}
+
+.social-app-icons {
+  width: 100%;
+  max-width: 400px;
+  /* min-width: 300px; */
+  display: flex;
+  justify-content: space-around;
+}
+.social-app-icons a i {
+  font-size: 1.5rem;
+}

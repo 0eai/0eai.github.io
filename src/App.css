@@ -1,0 +1,13 @@
+/*######################################
+    - - - - - - FRONT FACE - - - - -
+#######################################*/
+
+@font-face {
+  font-family: "Source code pro";
+  font-weight: 100;
+  font-style: normal;
+  src: url("./fonts/Source code pro.woff2");
+}
+body{
+
+}

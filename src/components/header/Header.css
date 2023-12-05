@@ -1,0 +1,14 @@
+.header-content{
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.header-content span{
+    font-size: 1.7rem;
+}
+
+.dash{
+    border-top: 0.3rem solid black;
+    border-radius: 2rem;
+    margin-top: 10px;
+}
