@@ -1,24 +1,26 @@
 .home-page-content {
-  /* position: fixed;
-  top: 0%;
-  left: 10%;
-  right: 10%;
-  bottom: 0%;
-  margin: auto; */
   display: flex;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 25%;
+  margin-right: 25%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
 }
 
+.wrapper {
+  /* position: relative;
+  padding-bottom: 75%;
+  height: 518px; */
+
+  /* aspect-ratio: 4 / 3;/ */
+}
 .card-content {
-  border: 2px solid black;
+  border: 10px solid #efefef;
   border-radius: 1rem;
   overflow: auto;
-  height: 418px;
+  aspect-ratio: 8 / 5;
+  /* height: 518px; */
 }
 .card_Avatar {
   max-height: 250px;
@@ -33,32 +35,29 @@
   flex-direction: column;
 }
 
-
 .profile-image::after {
-  
 }
 @media screen and (max-width: 767px) {
-  .partition-dash{
+  .partition-dash {
     /* content: ""; */
     width: 40%;
     margin-top: 15px;
-    border-bottom: 3px solid #589cf7;
-    background-color: #589cf7;
+    border: 10px solid #efefef;
+    /* background-color: #589cf7; */
   }
   .profile-image::after {
-
   }
 }
 @media screen and (min-width: 767px) {
   .profile-image::after {
     content: "";
     height: 40%;
-    width: 3px;
+    width: 10px;
     border-radius: 0.5rem;
     position: absolute;
     right: 0;
     top: 30%;
-    background-color: #589cf7;
+    background-color: #efefef;
   }
 }
 
@@ -97,15 +96,18 @@ i {
   transition: 0.1s ease-in-out;
 }
 
-a:hover {
+a {
   color: #589cf7;
+  cursor: pointer;
+}
+a:hover {
+  color: #1155cc;
   cursor: pointer;
 }
 
 .social-app-icons {
-  width: 100%;
   max-width: 400px;
-  /* min-width: 300px; */
+  min-width: 200px;
   display: flex;
   justify-content: space-around;
 }

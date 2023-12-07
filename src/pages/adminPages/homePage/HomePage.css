@@ -1,0 +1,5 @@
+.side-nav-bar-home-page {
+    min-height: calc(100vh - 70px);
+    height: max-content;
+  }
+  

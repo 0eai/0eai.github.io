@@ -1,39 +1,46 @@
-.presentation-page-content{
-    border: 2px solid black;
-    border-radius: 1rem;
-    overflow: auto;
-    height: 418px;
+.presentation-page-content {
+  border: 10px solid #efefef;
+  border-radius: 1rem;
+  overflow: auto;
+  /* height: 518px; */
+  aspect-ratio: 8 / 5;
+  /* height: 500px;
+  width: 800px; */
+  padding: 2.5rem;
 }
 
-.presentation-page-content .details{
-    display: flex;
-    padding: 0;
-    flex-direction: column;
-    margin: 1.5rem;
-    
+.presentation-page-content .details {
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  margin-right: 0;
+  margin-bottom: 1rem;
+}
+.presentation-page-content .details:not(:last-child) {
+  border-bottom: 5px dotted #efefef;
 }
 
-.presentation-page-content .details #topic-name{
-    font-size: 1.2rem;
-    color: black;
-    margin-bottom: 1rem;
+.presentation-page-content .details #topic-name {
+  font-size: 1.2rem;
+  color: black;
+  margin-bottom: 1rem;
 }
-.presentation-page-content .details #authors{
-    font-size: 1.2rem;
-    color: rgb(88, 88, 88);
-    margin-bottom: 1rem;
+.presentation-page-content .details #authors {
+  font-size: 1.2rem;
+  color: rgb(88, 88, 88);
+  margin-bottom: 1rem;
 }
-.presentation-page-content .details #place{
-    font-size: 1.2rem;
-    color: rgb(164, 164, 164);
-    margin-bottom: 1rem;
+.presentation-page-content .details #place {
+  font-size: 1.2rem;
+  color: rgb(164, 164, 164);
+  margin-bottom: 1rem;
 }
-.presentation-page-content .details #links{
-    font-size: 1.2rem;
-    color: #589cf7;
-    margin-bottom: 1rem;
+.presentation-page-content .details #links {
+  font-size: 1.2rem;
+  color: #589cf7;
+  margin-bottom: 1rem;
 }
-.presentation-page-content .details #links span{
-    margin-right: 1rem;
-    font-weight: 300;
+.presentation-page-content .details #links span {
+  margin-right: 1rem;
+  font-weight: 300;
 }

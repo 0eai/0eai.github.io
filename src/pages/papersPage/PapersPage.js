@@ -59,10 +59,10 @@ export default function PapersPage(props) {
                 {data.map((elem) => {
                     return (
                         <div className="details">
-                            <span id="topic-name" className="">{elem.topicName}</span>
-                            <span id="authors" className="">{elem.authors}</span>
-                            <span id="place" className="">{elem.place} </span>
-                            <span id="links" className="">
+                            <span id="topic-name" >{elem.topicName}</span>
+                            <span id="authors" >{elem.authors}</span>
+                            <span id="place" >{elem.place} </span>
+                            <span id="links" >
                                 <span>[Paper]</span>
                                 <span>[Arxiv]</span>
                                 <span>[Code]</span>

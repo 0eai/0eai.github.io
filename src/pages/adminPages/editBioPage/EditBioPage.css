@@ -1,0 +1,47 @@
+.top-nav-bar {
+    border-bottom: 1px solid #f7f5f5;
+  }
+  
+  .edit-bio-page .form-control {
+    box-shadow: none;
+  }
+  .edit-bio-page .form-select {
+    box-shadow: none;
+  }
+  .edit-bio-page .form-control:focus {
+    border-color: #5383ec !important;
+  }
+  .edit-bio-page .form-select:focus {
+    border-color: #5383ec !important;
+  }
+  .next-submit-btn {
+    margin: 10px;
+    height: 40px;
+    border: none;
+    padding: 5px;
+  
+    width: 13%;
+    min-width: 80px;
+    max-width: 90px;
+    font-size: 1.2rem;
+  }
+  .next-submit-btn:hover {
+    margin: 10px;
+    height: 40px;
+    border: none;
+    padding: 5px;
+    width: 13%;
+    min-width: 80px;
+    max-width: 90px;
+    font-size: 1.2rem;
+    background-color: #ffffff !important;
+    border: 1px solid #5383ec !important;
+    color: #5383ec ;
+    text-align: center;
+  }
+  .edit-bio-page input[type="checkbox"]:checked {
+    background-color: #6495ED;
+    border: none;
+  }
+  
+  

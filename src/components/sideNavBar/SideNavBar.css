@@ -1,0 +1,11 @@
+
+  
+  .vl {
+    border-left: 1.5px solid #eee;
+    height: 90vh !important;
+  }
+  
+  .admin-nav-bar-content {
+    min-height: calc(100vh - 70px) !important;
+  }
+  

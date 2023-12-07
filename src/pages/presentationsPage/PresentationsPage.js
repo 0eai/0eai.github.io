@@ -54,7 +54,6 @@ export default function PresentationsPage(props) {
     ]
 
     return (
-        // <Container>
         <Row className="presentation-page-content" >
             {data.map((elem) => {
                 return (
@@ -70,6 +69,5 @@ export default function PresentationsPage(props) {
             })}
 
         </Row>
-        // </Container>
     )
 }

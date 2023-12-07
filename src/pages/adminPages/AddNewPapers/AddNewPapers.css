@@ -1,0 +1,48 @@
+.add-new-papers-page .top-nav-bar {
+    border-bottom: 1px solid #f7f5f5;
+    margin: 0;
+  }
+  
+  .add-new-papers-page .form-control {
+    box-shadow: none;
+  }
+  .add-new-papers-page .form-select {
+    box-shadow: none;
+  }
+  .add-new-papers-page .form-control:focus {
+    border-color: #5383ec !important;
+  }
+  .add-new-papers-page .form-select:focus {
+    border-color: #5383ec !important;
+  }
+  .add-new-papers-page .next-submit-btn {
+    margin: 10px;
+    height: 40px;
+    border: none;
+    padding: 5px;
+  
+    width: 21%;
+    min-width: 130px;
+    max-width: 150px;
+    font-size: 1.2rem;
+  }
+  .add-new-papers-page .next-submit-btn:hover {
+    margin: 10px;
+    height: 40px;
+    border: none;
+    padding: 5px;
+    width: 21%;
+    min-width: 130px;
+    max-width: 150px;
+    font-size: 1.2rem;
+    background-color: #ffffff !important;
+    border: 1px solid #5383ec !important;
+    color: #5383ec ;
+    text-align: center;
+  }
+  .add-new-papers-page input[type="checkbox"]:checked {
+    background-color: #6495ED;
+    border: none;
+  }
+  
+  

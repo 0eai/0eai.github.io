@@ -1,0 +1,38 @@
+.login__container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+  }
+  .left-content {
+    text-align: center;
+    position:absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 100%;
+  }
+  
+  
+  
+  
+  
+  
+  
+  .loginForm__container {
+    position: relative;
+    height: 100vh;
+  }
+
+  .loginForm__content {
+    text-align: center;
+    position:absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    width: 100%;
+  }
+
+
+  

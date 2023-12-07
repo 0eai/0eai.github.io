@@ -1,14 +1,16 @@
 .header-content{
     margin-bottom: 10px;
     display: flex;
+    justify-content: center;
 }
 
 .header-content span{
-    font-size: 1.7rem;
+    font-size: 1.3rem;
 }
 
+
 .dash{
-    border-top: 0.3rem solid black;
+    border-top: 0.3rem solid #efefef;
     border-radius: 2rem;
     margin-top: 10px;
 }
