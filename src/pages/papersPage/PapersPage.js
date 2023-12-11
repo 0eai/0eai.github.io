@@ -33,7 +33,7 @@ export default function PapersPage(props) {
                         <span id="place" >{elem.publishedOn} </span>
                         <span id="links" >
                             <a href={elem.paperLink}>[Paper]</a>
-                            <a href={elem.arvixLink}>[Arxiv]</a>
+                            <a href={elem.arvixLink}>&#91;Arxiv&#93;</a>
                             <a href={elem.sourceCodeLink}>[Code]</a>
                             <a href={elem.presentationSlidesLink}>[Slides]</a>
                             <a href={elem.presentationVideoLink}>[Video]</a>

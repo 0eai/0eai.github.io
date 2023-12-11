@@ -51,8 +51,10 @@
   }
   .home-page-content {
     display: flex;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 0;
+    padding-top: 20px;
+    /* margin-left: 50px;
+    margin-right: 50px; */
     flex-direction: column;
     min-width: 450px;
     align-items: center;

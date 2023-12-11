@@ -44,4 +44,6 @@
 .presentation-page-content .details #links a {
   margin-right: 1rem;
   font-weight: 300;
+  text-underline-position: from-font;
+
 }
