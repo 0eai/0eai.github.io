@@ -1,25 +1,24 @@
-.home-page-content {
+
+@font-face {
+  font-family: 'QuickSand';
+  src: url(../../fonts/Quicksand/Quicksand-VariableFont_wght.ttf) ;
+  
+}
+
+
+.wrapper{
   display: flex;
-  margin-left: 25%;
-  margin-right: 25%;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  align-items: center;
 }
 
-.wrapper {
-  /* position: relative;
-  padding-bottom: 75%;
-  height: 518px; */
-
-  /* aspect-ratio: 4 / 3;/ */
-}
 .card-content {
-  border: 10px solid #efefef;
+  
+  /* height: 100%; */
+  /* border: 10px solid #efefef;
   border-radius: 1rem;
-  overflow: auto;
-  aspect-ratio: 8 / 5;
+  overflow: auto; */
+  /* aspect-ratio: 7 / 5; */
   /* height: 518px; */
 }
 .card_Avatar {
@@ -45,8 +44,23 @@
     border: 10px solid #efefef;
     /* background-color: #589cf7; */
   }
-  .profile-image::after {
+  .wrapper{
+    border: 10px solid #efefef;
+    border-radius: 1rem;
+    /* overflow: auto; */
   }
+  .home-page-content {
+    display: flex;
+    margin-left: 50px;
+    margin-right: 50px;
+    flex-direction: column;
+    min-width: 450px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'QuickSand';
+  }
+  
 }
 @media screen and (min-width: 767px) {
   .profile-image::after {
@@ -58,6 +72,26 @@
     right: 0;
     top: 30%;
     background-color: #efefef;
+  }
+  .wrapper{
+    border: 10px solid #efefef;
+    border-radius: 1rem;
+    overflow: auto;
+    aspect-ratio: 8 / 5;
+  }
+  .home-page-content {
+    display: flex;
+    width: 50%;
+    max-width: 1000px;
+    /* margin-left: 25%;
+    margin-right: 25%; */
+    margin: auto;
+    flex-direction: column;
+    min-width: 450px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'QuickSand';
   }
 }
 
@@ -113,4 +147,5 @@ a:hover {
 }
 .social-app-icons a i {
   font-size: 1.5rem;
+  
 }

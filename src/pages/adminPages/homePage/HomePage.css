@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'FiraCode';
+  src: url(../../../fonts/Fira_Code/FiraCode-VariableFont_wght.ttf) ;
+  
+}
+.admin-home-page{
+  font-family: "FiraCode";
+}
 .side-nav-bar-home-page {
     min-height: calc(100vh - 70px);
     height: max-content;

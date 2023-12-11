@@ -1,53 +1,49 @@
-import React, {  } from 'react';
+import React, { } from 'react';
 import './Google.css';
 import { GoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
-// import { useFirebase, firebaseAuth } from "../../../../../firebase/userContext.js"
-import { GoogleAuthProvider, signInWithCredential,onAuthStateChanged } from "firebase/auth";
+import { useFirebase, firebaseAuth } from "../../../../firebase/userContext.js"
+import { GoogleAuthProvider, signInWithCredential, onAuthStateChanged } from "firebase/auth";
 
 
 
 const Google = (props) => {
 
 
-//   const firebase = useFirebase()
+  const firebase = useFirebase()
   const navigate = useNavigate();
-  const {  setAddressForm, setUserData } = props
+  const { setAddressForm, setUserData } = props
 
   return (
     <GoogleLogin
 
       onSuccess={async credentialResponse => {
-        // const googleData = jwtDecode(credentialResponse.credential);
-        // const credential = GoogleAuthProvider.credential(credentialResponse.credential);
-        // await signInWithCredential(firebaseAuth, credential)
-        // onAuthStateChanged(firebaseAuth, (user) => {
-        //   if (user) {
-        //     const uid = user.uid;
-        //     localStorage.setItem('uid',uid)
-        //   }
-        // });
+        const googleData = jwtDecode(credentialResponse.credential);
+        const credential = GoogleAuthProvider.credential(credentialResponse.credential);
+        await signInWithCredential(firebaseAuth, credential)
 
-        // const data = await firebase.getDataOnce(googleData.email)
-        // let userDataObj = {
-        //   name:googleData.name,
-        //   email:googleData.email,
-        //   profile_pic_url:googleData.picture,
-        //   user_type:"client"
-        // }
+        let userDataObj = {
+          name: googleData.name,
+          email: googleData.email,
+          profile_pic_url: googleData.picture
+        }
+        onAuthStateChanged(firebaseAuth, (user) => {
+          if (user) {
+            const uid = user.uid;
+            localStorage.setItem('mySpaceUid', uid)
+          }
+        });
 
-        // localStorage.setItem('email',googleData.email)
-        // localStorage.setItem('profileImageUrl',googleData.picture)
-        // localStorage.setItem('name',googleData.name)
+        const data = await firebase.getDataOnce(googleData.email)
+        localStorage.setItem('mySpaceProfileImageUrl', googleData.picture)
 
-        // if(!data.length){
-        //   setUserData({...userDataObj})
-        //   setAddressForm('open')
-        // }
-        // else{
-          navigate('/admin');
-        // }
+        if (!data.length) {
+          firebase.putData(`users/${localStorage.getItem('mySpaceUid')}`, userDataObj)
+        }
+
+        navigate('/admin');
+
       }}
       onError={() => {
         console.log('Login Failed');

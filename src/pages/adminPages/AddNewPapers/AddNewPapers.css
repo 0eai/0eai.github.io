@@ -1,13 +1,19 @@
+.add-new-papers-page {
+  /* margin-left: 200px !important; */
+
+}
 .add-new-papers-page .top-nav-bar {
     border-bottom: 1px solid #f7f5f5;
     margin: 0;
+    position: sticky;
+    /* top: 50; */
   }
   
   .add-new-papers-page .form-control {
-    box-shadow: none;
+    box-shadow: none !important;
   }
   .add-new-papers-page .form-select {
-    box-shadow: none;
+    box-shadow: none !important;
   }
   .add-new-papers-page .form-control:focus {
     border-color: #5383ec !important;

@@ -1,11 +1,12 @@
 .presentation-page-content {
-  border: 10px solid #efefef;
+  /* border: 10px solid #efefef;
   border-radius: 1rem;
-  overflow: auto;
+  overflow: auto; */
   /* height: 518px; */
-  aspect-ratio: 8 / 5;
+  /* aspect-ratio: 8 / 5; */
   /* height: 500px;
   width: 800px; */
+  height: -webkit-fill-available;
   padding: 2.5rem;
 }
 
@@ -40,7 +41,7 @@
   color: #589cf7;
   margin-bottom: 1rem;
 }
-.presentation-page-content .details #links span {
+.presentation-page-content .details #links a {
   margin-right: 1rem;
   font-weight: 300;
 }

@@ -32,7 +32,7 @@ export default function AdminSideNavBar(props) {
     let { pageOpen, setPageOpen } = props
 
     return (
-        <div className="admin-nav-bar-content" style={{ width: '15%', padding: '0', borderRight: '1.5px solid #eee', minWidth: '140px', maxWidth: '230px' }}>
+        <div className="admin-nav-bar-content" style={{ width: '250px', padding: '0', borderRight: '1.5px solid #eee', minWidth: '140px', maxWidth: '230px' }}>
             <Row style={{ margin: '0', marginTop: "10px", cursor: 'pointer' }} onClick={() => {
                 if (!pageOpen || pageOpen !== "editBio") setPageOpen('editBio')
             }}>

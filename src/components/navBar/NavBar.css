@@ -1,259 +1,62 @@
 .header__container {
-    border-bottom: 1px solid #eee;
-    height: 70px;
-    max-height: 80px;
-    min-height: 50px;
-  }
-  .nav-bar-row{
-    height: -webkit-fill-available;
-    margin: 0;
-  }
-  .nav-bar-row .col{
-    height: 100%;
-  }
-  .contact-us-btn {
-    border-radius: 5px;
-    border: 1px solid #65c2f5;
-    width: 7rem !important;
-    height: max-content;
-  }
-  .right-side {
-    display: flex;
-    justify-content: flex-end;
-  }
-  .border-shadow {
-    box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
-    border: 1px solid transparent;
-  }
-  .nav-item {
-    margin-right: 10px !important;
-    padding: 13px 0;
-  }
-  .text-overflow {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-  .link {
-    color: #474747;
-    text-decoration: none;
-    padding: 30px;
-    font-size: 16px !important;
-  }
-  
-  .header {
-    position: fixed;
-    background: #fff;
-    z-index: 9;
-    width: 100%;
-  }
-  .nav__date {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* padding: 15px; */
-  }
-  .nav_profile {
-    /* padding: 11px 27px; */
-    display: flex;
-    justify-content: end;
-    align-items: center;
+  border-bottom: 1px solid #eee;
+  height: 70px;
+  max-height: 80px;
+  min-height: 50px;
+  /* position: -webkit-sticky;  */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+}
+.nav-bar-row {
+  height: -webkit-fill-available;
+  margin: 0;
+}
+.nav-bar-row .col {
+  height: 100%;
+}
+
+
+.nav_profile {
+  /* padding: 11px 27px; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
   padding: 0;
-    margin: 0;
-  }
-  .profile__container {
-    text-align: right;
-    margin: 15px;
-  }
-  /* .nav_profile-name {
+  margin: 0;
+}
+.profile__container {
+  text-align: right;
+  margin: 15px;
+}
+/* .nav_profile-name {
     padding-left: 30px;
   } */
-  
-  .user__icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 1.2rem;
-    border: 0.14rem solid #6495ED !important;
-  }
-  
-  .profile__dropdown {
-    background-color: transparent;
-    color: #464646;
-    border: none;
-    padding-right: 0 !important;
-  }
-  .profile__dropdown:hover {
-    background-color: transparent;
-    color: #464646;
-  }
-  .profile__dropdown .btn-check:checked+.btn, 
-  .btn.active, .btn.show, 
-  .btn:first-child:active, :not(.btn-check)+.btn:active {
-    color: #464646;
-    background-color: transparent;
-    border-color: none;
-  }
-  .profile__container .dropdown-menu {
-    transform: none !important;
-    min-width: 125px !important;
-    position: fixed !important;
-    right: 1px !important;
-    top: 70px !important;
-  }
-  .profile_link {
-    padding: 0;
-    text-align: center;
-    width: 125px !important;
-    overflow: hidden !important;
-  }
-  .profile__dropdown-mbl {
-    background-color: transparent;
-    border: none;
-    color: #464646;
-    padding: 0 !important;
-  }
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
-  .Apps {
-    overflow: hidden;
-  }
-  h1,h2,h3,h4,h5,h6 {
-    /* font-family: "Poppins-Bold"; */
-    color: #5d5d66;
-  }
-  p{
-    /* font-family: "Poppins-Regular"; */
-    color: #5d5d66;
-  }
-  .click__btn {
-    text-decoration: none;
-    color: #133f9c;
-    background-color: #ffce18;
-    padding: 10px 50px;
-    font-size: 18pt;
-    border-radius: 100px;
-  }
-  .google-translate {
-    position:absolute;
-    right: 0;
-    top: 0;
-  }
-  @media screen and (min-width: 600px) {
-    /* //For Tablets */
-    .App,
-    .responsive-width {
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    .responsive-sm {
-      display: flex !important;
-    }
-  
-    .responsive-md {
-      display: none !important;
-    }
-  }
-  
-  @media only screen and (max-width: 600px) {
-    /* small devices */
-    .App,
-    .responsive-width {
-      /* width: 738px; */
-      /* width: 290px; */
-      /* max-width: 414px; */
-      margin-left: auto;
-      margin-right: auto;
-    }
-  
-    .responsive-sm {
-      display: flex !important;
-    }
-  
-    .responsive-md {
-      display: none !important;
-    }
-  
-    .border-right {
-      border: none !important;
-    }
-  
-    .info-section {
-      width: 88% !important;
-    }
-  }
-  
-  @media screen and (min-width: 768px) {
-    /* //For Laptops */
-    .App,
-    .responsive-width {
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .responsive-sm {
-      display: flex !important;
-    }
-  
-    .responsive-md {
-      display: none !important;
-    }
-  }
-  
-  @media screen and (min-width: 992px) {
-    /* //For Large Laptops */
-    .App,
-    .responsive-width {
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-  
-  @media screen and (min-width: 1280px) {
-    /* //For Big TV's (HD Screens)  */
-    .App,
-    .responsive-width {
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .responsive-sm {
-      display: none !important;
-    }
-  
-    .responsive-md {
-      display: flex !important;
-    }
-  }
-  
-  @media screen and (min-width: 1920px) {
-    /* //For Projectors or Higher Resolution Screens (Full HD) */
-    .App,
-    .responsive-width {
-      width: 1890px;
-      /* width: 50%; */
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-  
-  @media screen and (min-width: 3840px) {
-    /* //For 4K Displays (Ultra HD) */
-    .App,
-    .responsive-width {
-      width: 3810px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-  .page_container {
-    padding: 100px 30px 50px;
-  }
-   
+
+.user__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 1.2rem;
+  border: 0.14rem solid #6495ed !important;
+}
+
+.profile__container .dropdown-menu {
+  transform: none !important;
+  min-width: 125px !important;
+  position: fixed !important;
+  right: 1px !important;
+  top: 70px !important;
+}
+.profile_link {
+  padding: 0;
+  text-align: center;
+  width: 125px !important;
+  overflow: hidden !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}

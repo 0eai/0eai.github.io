@@ -7,52 +7,37 @@ import Navbar from "../../../components/navBar/NavBar";
 import EditBioPage from "../editBioPage/EditBioPage";
 import AddPresentationPage from "../presentationPage/PresentationPage";
 import AddPapersPage from "../papersPage/PapersPage";
+import { firebaseAuth, useFirebase } from "../../../firebase/userContext";
 
 const AdminHomePage = () => {
-    let navigate = useNavigate();
-    const [requestPage, setRequestPage] = useState("open");
-    const [adminPage, setAdminPage] = useState("");
-    const [pageOpen, setPageOpen] = useState("Requests");
-    const [openProjectsPage, setOpenProjectsPage] = useState(false)
-    const [projectData, setProjectData] = useState({})
+  let navigate = useNavigate();
+  let firebase = useFirebase();
 
-    //   useEffect(() => {
-    //     const checkIfAdmin = async () => {
-    //       await firebase.getUserDataUsingPath(
-    //         localStorage.getItem("uid"),
-    //         (data) => {
-    //           if (data.user_type.toLowerCase() === "admin") {
-    //             setAdminPage("show");
-    //           } else setAdminPage("hide");
-    //         }
-    //       );
-    //     };
-    //     if (localStorage.length) checkIfAdmin();
-    //   });
+  const [pageOpen, setPageOpen] = useState("editBio");
 
-    //   useEffect(() => {
-    //     if (!localStorage.getItem("uid")) {
-    //       signOut(firebaseAuth);
-    //       navigate("/");
-    //     }
-    //   });
+  useEffect(() => {
+    if (!localStorage.getItem("mySpaceUid") || !firebase.user) {
+      if (firebase.user) signOut(firebaseAuth);
+      navigate("/");
+    }
+  }, []);
 
-    return (
-        <div style={{ height: "100vh" }}>
-            <Navbar />
-            <div style={{ display: "flex", height: "auto" }}>
-                <AdminSideNavBar pageOpen={pageOpen} setPageOpen={setPageOpen} />
-                {pageOpen === "editBio" ?
-                <EditBioPage />:
-                pageOpen === "papers" ?
-                <AddPapersPage /> :
-                pageOpen === "presentation" ?
-                <AddPresentationPage/> :
-                "" 
-            }
-            </div>
-        </div>
-    );
+  return (
+    <div className="admin-home-page" style={{ height: "100vh" }}>
+      <Navbar />
+      <div style={{ display: "flex", height: "auto",marginTop:'70px' }}>
+        <AdminSideNavBar pageOpen={pageOpen} setPageOpen={setPageOpen} />
+        {pageOpen === "editBio" ?
+          <EditBioPage setPageOpen={setPageOpen} /> :
+          pageOpen === "papers" ?
+            <AddPapersPage /> :
+            pageOpen === "presentation" ?
+              <AddPresentationPage /> :
+              ""
+        }
+      </div>
+    </div>
+  );
 };
 
 export default AdminHomePage;

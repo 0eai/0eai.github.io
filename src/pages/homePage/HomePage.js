@@ -1,14 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./HomePage.css";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import PapersPage from "../papersPage/PapersPage";
 import PresentationsPage from "../presentationsPage/PresentationsPage";
+import { useFirebase } from "../../firebase/userContext"
+import UidInputDialog from "../../components/dialogBox/DialogBox";
+// const uid = '2Z7MSJW8leV0yNclhOCIvGtR1c62'
+const uid = 'jnEFgvdCcgd0CPBsv2RSL6wjd4p1'
+
 export default function HomePage() {
     const [pageOpen, setPageOpen] = useState("");
+    const [showDialogBox, setShowDialogBox] = useState(true)
+    const [userData, setuserData] = useState({})
+    // const [uid, setUid] = useState("")
+    let firebase = useFirebase()
+
+    useEffect(() => {
+        if (uid) {
+            firebase.getUsersBio(uid, (data) => {
+                if (data) {
+                    setuserData(data)
+                    console.log((data))
+                }
+            })
+        }
+    }, [])
     return (
         <>
+            {/* <UidInputDialog showDialogBox={showDialogBox} setUid={setUid} uid={uid} setShowDialogBox={setShowDialogBox} /> */}
             <div className="home-page-content">
                 <Container
                     style={{
@@ -22,7 +43,7 @@ export default function HomePage() {
                         {!pageOpen ? (
                             <Row className="card-content">
                                 <Col md={6} lg={6} sm={12} className="profile-image">
-                                    <img className="card_Avatar" src="./images/chibi.jpeg"></img>
+                                    <img className="card_Avatar" src={userData.profile_picture}></img>
                                     <span className="partition-dash"></span>
                                 </Col>
                                 <Col md={6} lg={6} sm={12}>
@@ -36,83 +57,74 @@ export default function HomePage() {
                                             }}
                                         >
                                             <span className="mb-3" id="college-name">
-                                                Bong Jun Choi
+                                                {userData.name}
                                             </span>
                                             <span className="mb-2" id="post-name">
-                                                Associate Professor
+                                                {userData.position}
                                             </span>
                                             <span className="mb-3" id="location">
                                                 <i
                                                     style={{ color: "black" }}
                                                     className="bi bi-geo-alt-fill me-2"
                                                 ></i>
-                                                Seoul, Korea
+                                                {userData.location}
                                             </span>
                                         </div>
 
                                         <div className="mt-5 mb-3" style={{ textAlign: "center" }}>
                                             <span id="designation" className="">
-                                                {" "}
-                                                Associate Professor @ Seoul National University
+                                                {userData.description}
                                             </span>
                                         </div>
 
                                         <div className="mt-5 social-app-icons">
                                             <span>
                                                 <a
-                                                    href="mailto:aks<dot>bihta@gmail.com"
+                                                    href={`mailto:${userData.email}`}
                                                     target="_blank"
-                                                    rel="noopener"
+                                                    rel="noopener noreferrer"
                                                 >
-                                                    <i class="bi bi-envelope-fill"></i>
+                                                    <i className="bi bi-envelope-fill"></i>
                                                 </a>
                                             </span>
 
                                             <span>
                                                 <a
-                                                    href="https://www.linkedin.com/in/0eai/"
+                                                    href={userData.linkedIn}
                                                     target="_blank"
                                                     rel="noopener"
                                                 >
-                                                    <i class="fab fa-linkedin-in"></i>
+                                                    <i className="fab fa-linkedin-in"></i>
                                                 </a>
                                             </span>
 
                                             <span>
                                                 <a
-                                                    href="https://github.com/0eai"
+                                                    href={userData.github}
                                                     target="_blank"
                                                     rel="noopener"
                                                 >
-                                                    <i class="fab fa-github"></i>
+                                                    <i className="fab fa-github"></i>
                                                 </a>
                                             </span>
 
                                             <span>
                                                 <a
-                                                    href="https://twitter.com/aksbihta"
+                                                    href={userData.twitter}
                                                     target="_blank"
                                                     rel="noopener"
                                                 >
-                                                    <i class="fab fa-twitter"></i>
+                                                    <i className="fab fa-twitter"></i>
                                                 </a>
                                             </span>
-
-                                            {/* <span>
-                                            <a
-                                                href="https://docs.google.com/presentation/d/e/2PACX-1vQOSQUVZhlDLQHaAK_zlTsg-lv-jCu-UaKz1NX09Iz6Jb5dmrMWTRg5TMIchYyWsK-AkxuAJP5E7a0J/pub?start=false&loop=false&delayms=3000"
-                                                target="_blank" rel="noopener">
-                                                <i class="fa fa-file"></i>
-                                            </a>
-                                        </span> */}
                                         </div>
                                     </div>
                                 </Col>
                             </Row>
                         ) : pageOpen === "Papers" ? (
-                            <PapersPage />
+                            <PapersPage uid={uid} />
                         ) : (
-                            <PresentationsPage />
+                            <PresentationsPage uid={uid} />
                         )}
                     </div>
 

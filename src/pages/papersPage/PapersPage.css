@@ -1,10 +1,11 @@
 .papers-page-content {
-  border: 10px solid #efefef;
+  /* border: 10px solid #efefef;
   border-radius: 1rem;
-  overflow: auto;
-  /* height: 518px; */
+  overflow: auto; */
   padding: 2.5rem;
-  aspect-ratio: 8 / 5;
+  /* margin-top: auto; */
+  /* aspect-ratio: 8 / 5; */
+  height: -webkit-fill-available;
 
 }
 
@@ -40,7 +41,15 @@
   color: #589cf7;
   margin-bottom: 1rem;
 }
-.papers-page-content .details #links span {
+
+.papers-page-content .details #links a {
   margin-right: 1rem;
   font-weight: 300;
 }
+
+@media screen and (max-width: 768px) {
+  .papers-page-content{
+  
+  }
+}
+

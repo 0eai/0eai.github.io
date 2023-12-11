@@ -1,6 +1,6 @@
-.top-nav-bar {
-    border-bottom: 1px solid #f7f5f5;
-  }
+.edit-bio-page{
+margin-left: 200px !important;
+}
   
   .edit-bio-page .form-control {
     box-shadow: none;
@@ -9,23 +9,24 @@
     box-shadow: none;
   }
   .edit-bio-page .form-control:focus {
+    box-shadow: none !important;
     border-color: #5383ec !important;
   }
   .edit-bio-page .form-select:focus {
+    box-shadow: none !important;
     border-color: #5383ec !important;
   }
-  .next-submit-btn {
+  /* .next-submit-btn ,.save-bio-btn {
     margin: 10px;
     height: 40px;
     border: none;
     padding: 5px;
-  
     width: 13%;
     min-width: 80px;
     max-width: 90px;
     font-size: 1.2rem;
   }
-  .next-submit-btn:hover {
+  .next-submit-btn:hover, .save-bio-btn:hover {
     margin: 10px;
     height: 40px;
     border: none;
@@ -36,9 +37,40 @@
     font-size: 1.2rem;
     background-color: #ffffff !important;
     border: 1px solid #5383ec !important;
-    color: #5383ec ;
+    color: #5383ec  !important;
     text-align: center;
-  }
+  } */
+
+
+
+
+  .save-bio-btn {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    border: none;
+    padding: 5px;
+    min-width: 130px;
+    max-width: 140px;
+    font-size: 1.2rem !important;
+    background-color: #4285f4 !important;
+    text-align: center !important;
+   }
+   .save-bio-btn:hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    border: none;
+    padding: 5px;
+    min-width: 130px;
+    max-width: 140px;
+    font-size: 1.2rem;
+    background-color: #3f5fa2 !important;
+    text-align: center;
+   }
+
   .edit-bio-page input[type="checkbox"]:checked {
     background-color: #6495ED;
     border: none;

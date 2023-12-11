@@ -1,81 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./PapersPage.css"
+import { useFirebase } from "../../firebase/userContext";
 export default function PapersPage(props) {
-    let data = [
-        {
-            topicName: "Federated Optimization in Heterogenous Networks",
-            authors: "Tian Li, Anit Kumar Sahu, Manzil Zaheer, Virginia Smith",
-            place: "MLSys 2020",
-            links: {
-                paper: 'url',
-                Arxiv: 'url',
-                Code: 'url',
-                Slides: 'url',
-                Video: 'url'
+    const { uid } = props
+
+    const [papersData, setpapersData] = useState([])
+    let firebase = useFirebase()
+
+    useEffect(() => {
+        firebase.getPapers(uid, (data) => {
+            let arr = []
+            for (let uid in data) {
+            //    for(let paperId in data[uid]){
+                arr.push(data[uid])
+            //    }
             }
-        },
-        {
-            topicName: "Federated Optimization in Heterogenous Networks",
-            authors: "Tian Li, Anit Kumar Sahu, Manzil Zaheer, Virginia Smith",
-            place: "MLSys 2020",
-            links: {
-                paper: 'url',
-                Arxiv: 'url',
-                Code: 'url',
-                Slides: 'url',
-                Video: 'url'
-            }
-        },
-        {
-            topicName: "Federated Optimization in Heterogenous Networks",
-            authors: "Tian Li, Anit Kumar Sahu, Manzil Zaheer, Virginia Smith",
-            place: "MLSys 2020",
-            links: {
-                paper: 'url',
-                Arxiv: 'url',
-                Code: 'url',
-                Slides: 'url',
-                Video: 'url'
-            }
-        },
-        {
-            topicName: "Federated Optimization in Heterogenous Networks",
-            authors: "Tian Li, Anit Kumar Sahu, Manzil Zaheer, Virginia Smith",
-            place: "MLSys 2020",
-            links: {
-                paper: 'url',
-                Arxiv: 'url',
-                Code: 'url',
-                Slides: 'url',
-                Video: 'url'
-            }
-        },
-    ]
+            setpapersData([...arr])
+            // console.log(arr)
+        })
+    }, [])
+   
 
     return (
         // <Container>
-            <Row className="papers-page-content" >
-                {data.map((elem) => {
-                    return (
-                        <div className="details">
-                            <span id="topic-name" >{elem.topicName}</span>
-                            <span id="authors" >{elem.authors}</span>
-                            <span id="place" >{elem.place} </span>
-                            <span id="links" >
-                                <span>[Paper]</span>
-                                <span>[Arxiv]</span>
-                                <span>[Code]</span>
-                                <span>[Slides]</span>
-                                <span>[Video]</span>
+        <Row className="papers-page-content" >
+            {papersData.map((elem, idx) => {
+                return (
+                    <div key={idx} className="details">
+                        <span id="topic-name" >{elem.title}</span>
+                        <span id="authors" >{elem.authors}</span>
+                        <span id="place" >{elem.publishedOn} </span>
+                        <span id="links" >
+                            <a href={elem.paperLink}>[Paper]</a>
+                            <a href={elem.arvixLink}>[Arxiv]</a>
+                            <a href={elem.sourceCodeLink}>[Code]</a>
+                            <a href={elem.presentationSlidesLink}>[Slides]</a>
+                            <a href={elem.presentationVideoLink}>[Video]</a>
+                        </span>
+                    </div>
+                )
+            })}
 
-                            </span>
-
-                        </div>
-                    )
-                })}
-
-            </Row>
+        </Row>
         // </Container>
     )
 }

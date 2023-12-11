@@ -1,5 +1,8 @@
 
-  
+  .add-presentation-page{
+    margin-left: 230px !important;
+
+  }
   .add-presentation-page .card-comp {
     display: flex;
     flex-direction: column;
