@@ -25,6 +25,12 @@ export default function EditBioPage(props) {
     const [googleScholar, setGoogleScholar] = useState("")
     const [linkedIn, setLinkedIn] = useState("")
 
+    const [savedLogo,setSavedLogo] = useState("")
+    const [savedPicture,setSavedPicture] = useState("")
+
+    const logoInputRef = useRef(null)
+    const profileInputRef = useRef(null)
+
     const firebase = useFirebase()
 
     // const handleUpload = async () => {
@@ -53,7 +59,7 @@ export default function EditBioPage(props) {
     const uploadProfilePictureInStorage = async (path, file) => {
         try {
             let uid = localStorage.getItem('mySpaceUid')
-            const storageRef = ref(storage, `${path}`);
+            const storageRef = ref(storage, `profile_picture_&_logo/${uid}/profile_picture`);
             await uploadBytes(storageRef, file);
             const downloadURL = await getDownloadURL(storageRef);
             return downloadURL
@@ -66,9 +72,8 @@ export default function EditBioPage(props) {
     const handleClickSaveBio = async () => {
         let userdata = { name, position, location, description, github, twitter, googleScholar, email, linkedIn }
         let uid = localStorage.getItem('mySpaceUid');
-
-        if (profileLogo.length) {
-            const profileLogoUrl = await uploadProfileLogoInStorage(`profile_picture_&_logo/${uid}/profile_logo`, profileLogo)
+        if (profileLogo != savedLogo ) {
+            const profileLogoUrl = await uploadProfileLogoInStorage(profileLogo)
             userdata.profile_logo = profileLogoUrl
         }
         else {
@@ -77,8 +82,8 @@ export default function EditBioPage(props) {
             userdata.profile_logo = downloadURL
         }
 
-        if (profilePicture.length) {
-            const profilePictureUrl = await uploadProfilePictureInStorage(`profile_picture_&_logo/${uid}/profile_picture`, profilePicture)
+        if (profilePicture != savedPicture) {
+            const profilePictureUrl = await uploadProfilePictureInStorage(profilePicture)
             userdata.profile_picture = profilePictureUrl
         }
         else {
@@ -91,13 +96,14 @@ export default function EditBioPage(props) {
         firebase.putData(`bio/${localStorage.getItem("mySpaceUid")}`, userdata)
         setTimeout(() => {
             // navigate('/admin')
-            window.scrollTo({ top: 0, behavior:"instant" });
+            window.scrollTo({ top: 0, behavior: "instant" });
         }, 500);
     }
 
     useEffect(() => {
         firebase.getUsersBio(localStorage.getItem("mySpaceUid"), (data) => {
             if (data) {
+                // console.log(data)
                 setName(data.name)
                 setEmail(data.email)
                 setDescription(data.description)
@@ -107,10 +113,20 @@ export default function EditBioPage(props) {
                 setLinkedIn(data.linkedIn)
                 setPosition(data.position)
                 setTwitter(data.twitter)
+                setProfileLogo(data.profile_logo)
+                setProfilePicture(data.profile_picture)
             }
             else {
-                firebase.getUserData(localStorage.getItem("mySpaceUid"), (data) => {
+                firebase.getUserData(localStorage.getItem("mySpaceUid"),async (data) => {
                     if (data) {
+                        const storedLogoRef = ref(storage, `defaults/profile_logo/logo.png`);
+                        const logoDownloadURL = await getDownloadURL(storedLogoRef);
+                        const storedPictureRef = ref(storage, `defaults/profile_picture/picture.jpeg`);
+                        const pictureDownloadURL = await getDownloadURL(storedPictureRef);
+                        setProfileLogo(logoDownloadURL)
+                        setProfilePicture(pictureDownloadURL)
+                        setSavedLogo(logoDownloadURL)
+                        setSavedPicture(pictureDownloadURL)
                         setName(data.name)
                         setEmail(data.email)
                     }
@@ -118,13 +134,12 @@ export default function EditBioPage(props) {
             }
         })
 
-    },[])
+    }, [])
 
     return (
         <Container style={{ maxWidth: "100%", padding: '0', flex: '1' }} className="edit-bio-page">
             <Row style={{ margin: '0', padding: '3rem' }} >
                 <span style={{ fontSize: '2rem', color: '#999999', fontWeight: '600', fontSize: '2.2rem', padding: '0' }}
-                // style={{ color: '#999999', fontWeight: '600', fontSize: '2.2rem', marginRight: '2rem' }}
                 >Home</span>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Col style={{ margin: '4rem', maxWidth: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
@@ -132,19 +147,68 @@ export default function EditBioPage(props) {
 
                             <Form.Group className="mb-5" controlId="formBasicTwitter">
                                 <Form.Label className="mb-3">Profile logo </Form.Label>
-                                <Form.Control onChange={async (e) => {
+                                <div
+                                    onClick={() => {
+                                        logoInputRef.current.click()
+                                    }}
+                                    style={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        width: '100%',
+                                        height: '300px',
+                                        border: '4rem solid #efefef',
+                                        borderRadius: '5px'
+                                    }}
+                                >
+                                    <img
+                                        src={!profileLogo.type?profileLogo:URL.createObjectURL(profileLogo)}
+                                        alt="Profile Logo"
+                                        style={{
+                                            width: '150px',
+                                            height: '150px',
+                                            objectFit: 'cover',
+                                        }}
+                                    />
+                                </div>
+                                <Form.Control ref={logoInputRef} onChange={async (e) => {
                                     setProfileLogo(e.target.files[0])
-                                }} style={{
-                                    borderRadius: '.4rem', borderWidth: '.1rem', borderColor: 'black', height: '50px',
+                                }} accept="image/*" style={{
+                                    display: 'none', borderRadius: '.4rem', borderWidth: '.1rem', borderColor: 'black', height: '50px',
                                 }} type="file" placeholder="logo" />
                             </Form.Group>
 
                             <Form.Group className="mb-5" controlId="formBasicTwitter">
-                                <Form.Label className="mb-3">Profile picture </Form.Label>   {/* // default */}
-                                <Form.Control required onChange={(e) => {
+                                <Form.Label className="mb-3">Profile picture </Form.Label>
+                                <div
+                                    onClick={() => {
+                                        profileInputRef.current.click()
+                                    }}
+                                    style={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        width: '100%',
+                                        height: '300px',
+                                        border: '4rem solid #efefef',
+                                        borderRadius: '5px'
+                                    }}
+                                >
+                                    <img
+                                    
+                                        src={!profilePicture.type?profilePicture:URL.createObjectURL(profilePicture)}
+                                        alt="Profile Logo"
+                                        style={{
+                                            width: '150px',
+                                            height: '150px',
+                                            objectFit: 'cover',
+                                        }}
+                                    />
+                                </div>
+                                <Form.Control accept="image/*" ref={profileInputRef} onChange={(e) => {
                                     setProfilePicture(e.target.files[0])
                                 }} style={{
-                                    borderRadius: '.4rem', borderWidth: '.1rem', borderColor: 'black', height: '50px',
+                                    display:'none',borderRadius: '.4rem', borderWidth: '.1rem', borderColor: 'black', height: '50px',
                                 }} type="file" placeholder="picture" />
                             </Form.Group>
 

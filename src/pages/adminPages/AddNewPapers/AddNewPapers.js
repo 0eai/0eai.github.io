@@ -159,7 +159,7 @@ useEffect(()=>{
                             </Form.Group>
 
                             <Form.Group className="mb-5" controlId="formBasicPresentationVideoLink">
-                                <Form.Label className="mb-3">Presentation video link *</Form.Label>
+                                <Form.Label className="mb-3">Presentation video link </Form.Label>
                                 <Form.Control onChange={(e) => {
                                     setPresentationVideoLink(e.target.value)
                                 }} style={{

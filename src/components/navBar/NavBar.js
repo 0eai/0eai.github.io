@@ -33,8 +33,8 @@ const Navbar = () => {
           <Col xs sm={6} md={6} style={{ display: "flex", alignItems: 'center', padding: '0' }}>
             <img
               alt="logo"
-              style={{ height: '40px', margin: "15px", minWidth: '100px', maxWidth: '150px' }}
-              src={"images/logo.png"}
+              style={{ height: '40px', margin: "15px" }}
+              src={"images/sign.png"}
             />
           </Col>
           <Col xs sm={6} md={6} className="align-self-center nav_profile">

@@ -13,13 +13,8 @@
 }
 
 .card-content {
-  
-  /* height: 100%; */
-  /* border: 10px solid #efefef;
-  border-radius: 1rem;
-  overflow: auto; */
-  /* aspect-ratio: 7 / 5; */
-  /* height: 518px; */
+  width: 97%;
+  aspect-ratio: 8 / 5;
 }
 .card_Avatar {
   max-height: 250px;
@@ -150,4 +145,19 @@ a:hover {
 .social-app-icons a i {
   font-size: 1.5rem;
   
+}
+
+
+@media screen and (min-width: 1440px) {
+.card-content{
+  width: 100%;
+}
+.personal-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#personal-info{
+  height: auto;
+}
 }

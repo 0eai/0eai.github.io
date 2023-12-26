@@ -10,26 +10,33 @@ export default function AddPapersPage(props) {
     let [presentationData, setPresentationData] = useState([])
     const [presentationsDataArray, setPresentationsDataArray] = useState([])
     const firebase = useFirebase();
-    const [statusValue, setStatusValue] = useState("")
     const [searchQuery, setSearchQuery] = useState("");
     const [newPresentationPage, setNewPresentationPage] = useState("")
+    const [yearArr, setYearArr] = useState([])
+    const [selectedYear,setSelectedYear] = useState("")
+
 
     useEffect(() => {
         setPresentationData("")
         firebase.getPresentations(localStorage.getItem('mySpaceUid'),(data) => {
             let arr = []
-            for (let papersId in data) {
-               if(!data[papersId].isDeleted) arr.push({...data[papersId],papersId})
+            let years = []
+            for (let presentationId in data) {
+               if(!data[presentationId].isDeleted) arr.push({...data[presentationId],presentationId})
+               if(!years.includes(data[presentationId].presentedOn)) years.push(data[presentationId].presentedOn)
+
             }
+            years.sort((a,b)=>a-b)
             setPresentationsDataArray([...arr])
+            setYearArr([...years])
         })
     },[])
 
     const filteredArray = presentationsDataArray.filter((elem) => {
-        const { title } = elem;
-        const lowerCaseQuery = searchQuery.toLowerCase();
-        return (
-            (title && title.toLowerCase().includes(lowerCaseQuery))
+        const { presentedOn } = elem;
+        if(selectedYear === 'All' || !selectedYear ) return true
+        else return (
+            (selectedYear && presentedOn==selectedYear)
         );
     });
 
@@ -47,10 +54,11 @@ export default function AddPapersPage(props) {
                         </div>
 
                         <div className="" style={{ display: 'flex', height: '40px' }}>
-                            <Form.Select style={{ boxShadow: 'none', backgroundColor: "#f2f2f2", border: 'none', minWidth: '100px' }} onChange={(e) => setStatusValue(e.target.value)} aria-label="Default select example">
+                            <Form.Select onChange={(e)=>setSelectedYear(e.target.value)}  style={{ boxShadow: 'none', backgroundColor: "#f2f2f2", border: 'none', minWidth: '100px' }} aria-label="Default select example">
                                 <option value="All">All</option>
-                                <option value="Pending">Pending</option>
-                                <option value="Approved">Approved</option>
+                                {yearArr.map((elem,idx)=>{
+                                    return <option key={idx} value={`${elem}`}>{elem}</option>
+                                })}
                             </Form.Select>
                             <InputGroup
                                 style={{

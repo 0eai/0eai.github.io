@@ -29,7 +29,6 @@ export default function HomePage() {
     }, [])
     return (
         <>
-            {/* <UidInputDialog showDialogBox={showDialogBox} setUid={setUid} uid={uid} setShowDialogBox={setShowDialogBox} /> */}
             <div className="home-page-content">
                 <Container
                     style={{
@@ -46,7 +45,7 @@ export default function HomePage() {
                                     <img className="card_Avatar" src={userData.profile_picture}></img>
                                     <span className="partition-dash"></span>
                                 </Col>
-                                <Col md={6} lg={6} sm={12}>
+                                <Col md={6} lg={6} sm={12} className="personal-content">
                                     <div id="personal-info">
                                         <div
                                             style={{

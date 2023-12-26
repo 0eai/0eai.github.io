@@ -114,7 +114,7 @@ export default function AddNewPresentation(props) {
 
 
                             <Form.Group className="" controlId="formBasicTitle">
-                                <Form.Label className="mb-3">Presentation video link *</Form.Label>
+                                <Form.Label className="mb-3">Presentation video link</Form.Label>
                                 <Form.Control onChange={(e) => {
                                     setPresentationVideoLink(e.target.value)
 

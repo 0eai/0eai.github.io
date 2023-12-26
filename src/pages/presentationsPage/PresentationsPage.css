@@ -18,7 +18,7 @@
   margin-bottom: 1rem;
 }
 .presentation-page-content .details:not(:last-child) {
-  border-bottom: 5px dotted #efefef;
+  border-bottom: 5px dotted #ffffff;
 }
 
 .presentation-page-content .details #topic-name {
@@ -43,7 +43,8 @@
 }
 .presentation-page-content .details #links a {
   margin-right: 1rem;
-  font-weight: 300;
+  font-weight: 900;
   text-underline-position: from-font;
+
 
 }
