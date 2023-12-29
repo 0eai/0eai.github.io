@@ -122,11 +122,11 @@ a, i{
 #name {
   font-family: 'Source code pro', sans-serif;
   font-weight: bold;
-	padding-top: 45px;
-	margin-bottom: 5px;
-	font-size: 18px;
-	color: #2a2a2a;
-	line-height: 1.8
+  padding-top: 45px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #2a2a2a;
+  line-height: 1.8;
 }
 
 a {
