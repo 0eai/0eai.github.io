@@ -12,17 +12,15 @@ export default function PapersPage(props) {
         firebase.getPapers(uid, (data) => {
             let arr = []
             for (let uid in data) {
-            //    for(let paperId in data[uid]){
                 arr.push(data[uid])
-            //    }
             }
             setpapersData([...arr])
-            // console.log(arr)
         })
     }, [])
-   
+
 
     return (
+
         // <Container>
         <Row className="papers-page-content" >
             {papersData.map((elem, idx) => {
@@ -32,11 +30,16 @@ export default function PapersPage(props) {
                         <span id="authors" >{elem.authors}</span>
                         <span id="place" >{elem.publishedOn} </span>
                         <span id="links" >
-                            <a href={elem.paperLink}>[Paper]</a>
-                            <a href={elem.arvixLink}>&#91;Arxiv&#93;</a>
-                            <a href={elem.sourceCodeLink}>[Code]</a>
-                            <a href={elem.presentationSlidesLink}>[Slides]</a>
-                            <a href={elem.presentationVideoLink}>[Video]</a>
+                            {elem.paperLink && <a className="mb-3" href={elem.paperLink} target="_blank"
+                                rel="noopener">[Paper]</a>}
+                            {elem.arvixLink && <a className="mb-3" href={elem.arvixLink} target="_blank"
+                                rel="noopener">&#91;Arxiv&#93;</a>}
+                            {elem.sourceCodeLink && <a className="mb-3" href={elem.sourceCodeLink} target="_blank"
+                                rel="noopener">[Code]</a>}
+                            {elem.presentationSlidesLink && <a className="presentation-slides-link mb-3" href={elem.presentationSlidesLink} target="_blank"
+                                rel="noopener">[Slides]</a>}
+                            {elem.presentationVideoLink && <a className="presentation-video-link mb-3" href={elem.presentationVideoLink} target="_blank"
+                                rel="noopener">[Video]</a>}
                         </span>
                     </div>
                 )

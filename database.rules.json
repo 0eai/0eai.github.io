@@ -1,6 +1,28 @@
 {
   "rules": {
-    ".read": "now < 1704306600000",  // 2024-1-4
-    ".write": "now < 1704306600000",  // 2024-1-4
+    "users": {
+      "$uid": {
+        ".write": "'2Z7MSJW8leV0yNclhOCIvGtR1c62' === auth.uid",
+        ".read":"true"
+      }
+    },
+    "bio": {
+      "$uid": {
+        ".write": "'2Z7MSJW8leV0yNclhOCIvGtR1c62' === auth.uid",
+        ".read":"true"
+      }
+    },
+    "presentations": {
+      "$uid": {
+        ".write": "'2Z7MSJW8leV0yNclhOCIvGtR1c62' === auth.uid",
+        ".read":"true"
+      }
+    },
+    "papers": {
+      "$uid": {
+        ".write": "'2Z7MSJW8leV0yNclhOCIvGtR1c62' === auth.uid",
+        ".read":"true"
+      }
+    }
   }
 }

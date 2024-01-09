@@ -15,64 +15,12 @@ export default function PresentationsPage(props) {
         firebase.getPresentations(uid, (data) => {
             let arr = []
             for (let uid in data) {
-                // for(let presentationId in data[uid]){
-                 arr.push(data[uid])
-                // }
-             }
+                arr.push(data[uid])
+            }
             setPresentationData([...arr])
         })
     }, [])
 
-    let data = [
-        {
-            topicName: "Federated Optimization in Heterogenous Networks",
-            authors: "Tian Li, Anit Kumar Sahu, Manzil Zaheer, Virginia Smith",
-            place: "MLSys 2020",
-            links: {
-                paper: 'url',
-                Arxiv: 'url',
-                Code: 'url',
-                Slides: 'url',
-                Video: 'url'
-            }
-        },
-        {
-            topicName: "Federated Optimization in Heterogenous Networks",
-            authors: "Tian Li, Anit Kumar Sahu, Manzil Zaheer, Virginia Smith",
-            place: "MLSys 2020",
-            links: {
-                paper: 'url',
-                Arxiv: 'url',
-                Code: 'url',
-                Slides: 'url',
-                Video: 'url'
-            }
-        },
-        {
-            topicName: "Federated Optimization in Heterogenous Networks",
-            authors: "Tian Li, Anit Kumar Sahu, Manzil Zaheer, Virginia Smith",
-            place: "MLSys 2020",
-            links: {
-                paper: 'url',
-                Arxiv: 'url',
-                Code: 'url',
-                Slides: 'url',
-                Video: 'url'
-            }
-        },
-        {
-            topicName: "Federated Optimization in Heterogenous Networks",
-            authors: "Tian Li, Anit Kumar Sahu, Manzil Zaheer, Virginia Smith",
-            place: "MLSys 2020",
-            links: {
-                paper: 'url',
-                Arxiv: 'url',
-                Code: 'url',
-                Slides: 'url',
-                Video: 'url'
-            }
-        },
-    ]
 
     return (
         <Row className="presentation-page-content" >
@@ -82,8 +30,10 @@ export default function PresentationsPage(props) {
                         <span id="topic-name" className="">{elem.title}</span>
                         <span id="place" className="">{elem.presentedOn} </span>
                         <span id="links" className="">
-                            <a href={elem.presentationSlidesLink}>[Slides]</a>
-                            <a href={elem.presentationVideoLink}>[Video]</a>
+                            {elem.presentationSlidesLink && <a href={elem.presentationSlidesLink} target="_blank"
+                                rel="noopener">[Slides]</a>}
+                            {elem.presentationVideoLink && <a href={elem.presentationVideoLink} target="_blank"
+                                rel="noopener">[Video]</a>}
                         </span>
                     </div>
                 )

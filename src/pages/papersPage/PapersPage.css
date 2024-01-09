@@ -3,6 +3,7 @@
   border-radius: 1rem;
   overflow: auto; */
   padding: 2.5rem;
+  margin: 0 !important;
   /* margin-top: auto; */
   /* aspect-ratio: 8 / 5; */
   height: -webkit-fill-available;
@@ -27,12 +28,12 @@
   margin-bottom: 1rem;
 }
 .papers-page-content .details #authors {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: rgb(88, 88, 88);
   margin-bottom: 1rem;
 }
 .papers-page-content .details #place {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: rgb(164, 164, 164);
   margin-bottom: 1rem;
 }
@@ -44,13 +45,11 @@
 
 .papers-page-content .details #links a {
   margin-right: 1rem;
-  font-weight: 900;
+  font-weight: 600;
+  line-height: 1.6;
   text-underline-position: from-font;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
 
-@media screen and (max-width: 768px) {
-  .papers-page-content{
-  
-  }
-}
 

@@ -6,46 +6,72 @@ import Footer from "../../components/footer/Footer";
 import PapersPage from "../papersPage/PapersPage";
 import PresentationsPage from "../presentationsPage/PresentationsPage";
 import { useFirebase } from "../../firebase/userContext"
-import UidInputDialog from "../../components/dialogBox/DialogBox";
-// const uid = '2Z7MSJW8leV0yNclhOCIvGtR1c62'
-const uid = 'jnEFgvdCcgd0CPBsv2RSL6wjd4p1'
+const uid = '2Z7MSJW8leV0yNclhOCIvGtR1c62'
+// const uid = 'jnEFgvdCcgd0CPBsv2RSL6wjd4p1'
 
 export default function HomePage() {
     const [pageOpen, setPageOpen] = useState("");
     const [showDialogBox, setShowDialogBox] = useState(true)
     const [userData, setuserData] = useState({})
-    // const [uid, setUid] = useState("")
+    const [mobileView, setMobileView] = useState(false)
+
     let firebase = useFirebase()
+
+    function debounce(func, delay) {
+        let timeoutId;
+        return function () {
+            const context = this;
+            const args = arguments;
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                func.apply(context, args);
+            }, delay);
+        };
+    }
+
+
+    const handleResize = debounce(() => {
+        if (window.innerHeight > window.innerWidth) {
+            setMobileView(true)
+        }
+        else setMobileView(false)
+    }, 200); // Adjust the delay as needed
+
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [handleResize]);
 
     useEffect(() => {
         if (uid) {
             firebase.getUsersBio(uid, (data) => {
                 if (data) {
                     setuserData(data)
-                    console.log((data))
                 }
             })
+        }
+        if (window.innerHeight > window.innerWidth) {
+            setMobileView(true)
         }
     }, [])
     return (
         <>
-            <div className="home-page-content">
+            <div className={mobileView ? "home-page-content-mobiel-view" : "home-page-content"}>
                 <Container
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        marginTop: "auto",
-                    }}
+                    className="page-content"
+
                 >
-                    <Header setPageOpen={setPageOpen} pageOpen={pageOpen} />
-                    <div className="wrapper">
+                    <Header setPageOpen={setPageOpen} pageOpen={pageOpen} mobileView={mobileView} />
+                    <div className={mobileView ? "wrapper-mobile-view" : "wrapper"}>
                         {!pageOpen ? (
                             <Row className="card-content">
-                                <Col md={6} lg={6} sm={12} className="profile-image">
-                                    <img className="card_Avatar" src={userData.profile_picture}></img>
-                                    <span className="partition-dash"></span>
+                                <Col md={mobileView ? 12 : 6} lg={mobileView ? 12 : 6} sm={12} className={mobileView ? "profile-image" : "profile-image after"}>
+                                    <img className="card_Avatar" style={{ border: 'none', boxShadow: 'none' }} src={userData.profile_picture ? userData.profile_picture : ''}></img>
+                                    <span className={mobileView ? "partition-dash" : 'partition-dash-hide'}></span>
                                 </Col>
-                                <Col md={6} lg={6} sm={12} className="personal-content">
+                                <Col md={mobileView ? 12 : 6} lg={mobileView ? 12 : 6} sm={12} className="personal-content">
                                     <div id="personal-info">
                                         <div
                                             style={{
@@ -55,13 +81,13 @@ export default function HomePage() {
                                                 minWidth: "210px",
                                             }}
                                         >
-                                            <span className="mb-3" id="college-name">
+                                            <span className="" id="college-name" style={{ display: '-webkit-box', WebkitBoxOrient: 'vertical', overflow: 'hidden', WebkitLineClamp: 1, whiteSpace: 'normal', paddingBottom: '20px' }}>
                                                 {userData.name}
                                             </span>
-                                            <span className="mb-2" id="post-name">
+                                            <span className="" id="post-name" style={{ display: '-webkit-box', WebkitBoxOrient: 'vertical', overflow: 'hidden', WebkitLineClamp: 1, whiteSpace: 'normal', paddingBottom: '20px' }}>
                                                 {userData.position}
                                             </span>
-                                            <span className="mb-3" id="location">
+                                            <span className="" id="location" style={{ display: '-webkit-box', WebkitBoxOrient: 'vertical', overflow: 'hidden', WebkitLineClamp: 1, whiteSpace: 'normal' }}>
                                                 <i
                                                     style={{ color: "black" }}
                                                     className="bi bi-geo-alt-fill me-2"
@@ -70,52 +96,73 @@ export default function HomePage() {
                                             </span>
                                         </div>
 
-                                        <div className="mt-5 mb-3" style={{ textAlign: "center" }}>
-                                            <span id="designation" className="">
+                                        <div className="mt-5 mb-5" style={{ textAlign: "center" }}>
+                                            <span id="designation" className="" style={{ display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: 2, whiteSpace: 'normal' }}>
                                                 {userData.description}
                                             </span>
                                         </div>
 
-                                        <div className="mt-5 social-app-icons">
-                                            <span>
-                                                <a
-                                                    href={`mailto:${userData.email}`}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    <i className="bi bi-envelope-fill"></i>
-                                                </a>
-                                            </span>
+                                        <div className="social-app-icons">
+                                            <div className="icon mail">
+                                                <div className="tooltip">
+                                                    Mail
+                                                </div>
+                                                {userData.email && <span>
+                                                    <a
+                                                        href={`mailto:${userData.email}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                    >
+                                                        <i className="bi bi-envelope-fill"></i>
+                                                    </a>
+                                                </span>}
+                                            </div>
 
-                                            <span>
-                                                <a
-                                                    href={userData.linkedIn}
-                                                    target="_blank"
-                                                    rel="noopener"
-                                                >
-                                                    <i className="fab fa-linkedin-in"></i>
-                                                </a>
-                                            </span>
+                                            <div className="icon linkedIn">
+                                                <div className="tooltip">
+                                                    LinkedIn
+                                                </div>
 
-                                            <span>
-                                                <a
-                                                    href={userData.github}
-                                                    target="_blank"
-                                                    rel="noopener"
-                                                >
-                                                    <i className="fab fa-github"></i>
-                                                </a>
-                                            </span>
+                                                {userData.linkedIn && <span>
+                                                    <a
+                                                        href={userData.linkedIn}
+                                                        target="_blank"
+                                                        rel="noopener"
+                                                    >
+                                                        <i className="fab fa-linkedin-in"></i>
+                                                    </a>
+                                                </span>}
+                                            </div>
 
-                                            <span>
-                                                <a
-                                                    href={userData.twitter}
-                                                    target="_blank"
-                                                    rel="noopener"
-                                                >
-                                                    <i className="fab fa-twitter"></i>
-                                                </a>
-                                            </span>
+                                            <div className="icon github">
+                                                <div className="tooltip">
+                                                    Github
+                                                </div>
+                                                {userData.github && <span>
+                                                    <a
+                                                        href={userData.github}
+                                                        target="_blank"
+                                                        rel="noopener"
+                                                    >
+                                                        <i className="fab fa-github"></i>
+                                                    </a>
+                                                </span>}
+                                            </div>
+
+                                            <div className="icon google-scholar">
+                                                <div className="tooltip">
+                                                    GoogleScholar
+                                                </div>
+                                                {userData.googleScholar && <span>
+                                                    <a
+                                                        href={userData.googleScholar}
+                                                        target="_blank"
+                                                        rel="noopener"
+                                                    >
+                                                        <i className="fa-brands fa-google-scholar"></i>
+                                                    </a>
+                                                </span>}
+                                            </div>
                                         </div>
                                     </div>
                                 </Col>
@@ -128,6 +175,9 @@ export default function HomePage() {
                     </div>
 
                 </Container>
+                <div style={{ marginTop: 'auto', padding: '25px' }}>
+                    <img className="" style={{ height: '55px', border: 'none', boxShadow: 'none' }} src={userData.profile_logo ? userData.profile_logo : ''}></img>
+                </div>
                 <Footer />
             </div>
         </>
