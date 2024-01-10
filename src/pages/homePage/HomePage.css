@@ -102,8 +102,9 @@
     margin: 0;
     padding-top: 20px;
     flex-direction: column;
-    min-width: 450px;
+    /* min-width: 450px; */
     align-items: center;
+    width: -webkit-fill-available;
     justify-content: center;
     min-height: 100%;
     font-family: "QuickSand" !important;
